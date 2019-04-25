@@ -27,7 +27,7 @@ public class BelMan extends Application {
         pStage.setTitle("BelMan login");
         pStage.centerOnScreen();
         //pStage.getIcons().add(new Image("icon.png"));
-        Parent root = FXMLLoader.load(getClass().getResource("../view/MainWindow.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("gui/view/MainWindow.fxml"));
         Scene scene = new Scene(root);   
         pStage.setScene(scene);
         pStage.show();
