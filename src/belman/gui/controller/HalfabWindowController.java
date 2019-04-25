@@ -14,7 +14,7 @@ import javafx.fxml.Initializable;
  *
  * @author maxim
  */
-public class HalfabController implements Initializable {
+public class HalfabWindowController implements Initializable {
 
     /**
      * Initializes the controller class.

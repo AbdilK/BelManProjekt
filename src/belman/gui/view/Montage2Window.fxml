@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" fx:id="" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="belman.gui.controller.Montage2WindowController">
+
+    <stylesheets>
+        <URL value="@stylesheet.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane id="AnchorPane" layoutY="-108.0" prefHeight="469.0" prefWidth="600.0" styleClass="BelMan" stylesheets="@stylesheet.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ToolBar prefHeight="40.0" prefWidth="641.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <TableView layoutY="40.0" prefHeight="347.0" prefWidth="448.0">
+              <columns>
+                  <TableColumn minWidth="2.0" prefWidth="94.0" text="Ordrenummer" />
+                  <TableColumn minWidth="2.0" prefWidth="76.0" text="Status" />
+                <TableColumn prefWidth="128.0" text="Nuværende afdeling" />
+                <TableColumn minWidth="2.0" prefWidth="78.0" text="Start dato" />
+                  <TableColumn minWidth="2.0" prefWidth="72.0" text="Slut dato" />
+              </columns>
+            </TableView>
+            <Label layoutX="448.0" layoutY="40.0" text="Afdeling: Montage2" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ToolBar layoutX="530.0" prefHeight="40.0" prefWidth="113.0" AnchorPane.leftAnchor="530.0" AnchorPane.rightAnchor="-43.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <Button fx:id="PrevBtn" mnemonicParsing="false" onAction="#PreviousPage" text="&lt;" />
+            <Button fx:id="NextBtn" mnemonicParsing="false" onAction="#NextPage" text="&gt;" />
+         </items>
+      </ToolBar>
+   </children>
+</AnchorPane>
