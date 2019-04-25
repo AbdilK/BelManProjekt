@@ -22,23 +22,13 @@
         <URL value="@stylesheet.css" />
     </stylesheets>
    <children>
-      <AnchorPane id="AnchorPane" layoutY="-108.0" prefHeight="578.0" prefWidth="710.0" styleClass="BelMan" stylesheets="@stylesheet.css" AnchorPane.topAnchor="-108.0">
+      <AnchorPane id="AnchorPane" layoutY="-108.0" prefHeight="469.0" prefWidth="600.0" styleClass="BelMan" stylesheets="@stylesheet.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ToolBar prefHeight="40.0" prefWidth="641.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <items>
-                 
-               </items>
-            </ToolBar>
-            <ToolBar layoutX="638.0" prefHeight="40.0" prefWidth="90.0" AnchorPane.leftAnchor="638.0" AnchorPane.rightAnchor="-18.0" AnchorPane.topAnchor="0.0">
-              <items>
-                <Button fx:id="PrevBtn" mnemonicParsing="false" text="&lt;" />
-                  <Button fx:id="NextBtn" mnemonicParsing="false" text="&gt;" />
-              </items>
-            </ToolBar>
-            <GridPane fx:id="gridPaneOneToSix" layoutY="150.0" prefHeight="316.0" prefWidth="710.0">
+            <ToolBar prefHeight="40.0" prefWidth="641.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <GridPane fx:id="gridPaneOneToSix" layoutY="100.0" prefHeight="316.0" prefWidth="809.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="370.0" minWidth="10.0" prefWidth="370.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="354.0" minWidth="10.0" prefWidth="340.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -46,12 +36,12 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="btnOne" mnemonicParsing="false" prefHeight="171.0" prefWidth="364.0" text="1. Halfab">
+                  <Button fx:id="btnOne" mnemonicParsing="false" prefHeight="106.0" prefWidth="459.0" text="1. Halfab">
                      <font>
                         <Font size="35.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnThree" mnemonicParsing="false" prefHeight="263.0" prefWidth="369.0" text="3. Montage 1" GridPane.rowIndex="1">
+                  <Button fx:id="btnThree" mnemonicParsing="false" prefHeight="105.0" prefWidth="343.0" text="3. Montage 1" GridPane.rowIndex="1">
                      <font>
                         <Font size="35.0" />
                      </font>
@@ -61,12 +51,12 @@
                         <Font size="35.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnTwo" mnemonicParsing="false" prefHeight="271.0" prefWidth="400.0" text="2. Bælg" GridPane.columnIndex="1">
+                  <Button fx:id="btnTwo" mnemonicParsing="false" prefHeight="106.0" prefWidth="396.0" text="2. Bælg" GridPane.columnIndex="1">
                      <font>
                         <Font size="35.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnFour" mnemonicParsing="false" prefHeight="231.0" prefWidth="375.0" text="4. Montage 2" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Button fx:id="btnFour" mnemonicParsing="false" prefHeight="105.0" prefWidth="368.0" text="4. Montage 2" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="35.0" />
                      </font>
@@ -78,7 +68,7 @@
                   </Button>
                </children>
             </GridPane>
-            <GridPane layoutY="459.0" prefHeight="113.0" prefWidth="710.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="459.0">
+            <GridPane layoutY="445.0" prefHeight="113.0" prefWidth="710.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="445.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
@@ -93,12 +83,18 @@
                   </Button>
                </children>
             </GridPane>
-            <Label layoutX="133.0" layoutY="67.0" prefHeight="51.0" prefWidth="465.0" text="Please choose a department" textFill="WHITE">
+            <Label layoutX="68.0" layoutY="49.0" prefHeight="51.0" prefWidth="465.0" text="Please choose a department" textFill="WHITE">
                <font>
                   <Font size="35.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
+      <ToolBar layoutX="530.0" prefHeight="40.0" prefWidth="113.0" AnchorPane.leftAnchor="530.0" AnchorPane.rightAnchor="-43.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <Button fx:id="PrevBtn" mnemonicParsing="false" onAction="#PreviousPage" text="&lt;" />
+            <Button fx:id="NextBtn" mnemonicParsing="false" onAction="#NextPage" text="&gt;" />
+         </items>
+      </ToolBar>
    </children>
 </AnchorPane>
