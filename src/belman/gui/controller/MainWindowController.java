@@ -54,10 +54,56 @@ public class MainWindowController implements Initializable {
         // TODO
     }    
 
+   @FXML
+    private void openHalfab(ActionEvent event) throws IOException 
+    {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/belman/gui/view/HalfabWindow.fxml"));
+        MainWindowPane.getChildren().setAll(pane);
+        // den vil ikke dur, dog vil de andre
+    }
+
     @FXML
-    private void OpenHalfab(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../view/HalfabWindow.fxml"));
+    private void openMontage1(ActionEvent event) throws IOException 
+    {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/belman/gui/view/Montage1Window.fxml"));
+        MainWindowPane.getChildren().setAll(pane);  
+    }
+
+    @FXML
+    private void openBertel(ActionEvent event) throws IOException 
+    {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/belman/gui/view/BertelWindow.fxml"));
         MainWindowPane.getChildren().setAll(pane);
     }
+
+    @FXML
+    private void openBælg(ActionEvent event) throws IOException 
+    {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/belman/gui/view/BælgWindow.fxml"));
+        MainWindowPane.getChildren().setAll(pane);
+    }
+
+    @FXML
+    private void openMontage2(ActionEvent event)  throws IOException 
+    {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/belman/gui/view/Montage2Window.fxml"));
+        MainWindowPane.getChildren().setAll(pane);
+    }
+
+    @FXML
+    private void openMaler(ActionEvent event) throws IOException 
+    {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/belman/gui/view/MalerWindow.fxml"));
+        MainWindowPane.getChildren().setAll(pane);
+    }
+
+    @FXML
+    private void openForsendelse(ActionEvent event) throws IOException 
+    {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/belman/gui/view/ForsendelseWindow.fxml"));
+        MainWindowPane.getChildren().setAll(pane);
+    }
+
+    
     
 }

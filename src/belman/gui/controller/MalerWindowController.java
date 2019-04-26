@@ -5,12 +5,15 @@
  */
 package belman.gui.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -23,6 +26,8 @@ public class MalerWindowController implements Initializable {
     private Button PrevBtn;
     @FXML
     private Button NextBtn;
+    @FXML
+    private AnchorPane malerPane;
 
     /**
      * Initializes the controller class.
@@ -33,7 +38,10 @@ public class MalerWindowController implements Initializable {
     }    
 
     @FXML
-    private void PreviousPage(ActionEvent event) {
+    private void PreviousPage(ActionEvent event) throws IOException 
+    {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/belman/gui/view/MainWindow.fxml"));
+        malerPane.getChildren().setAll(pane);
     }
 
     @FXML
