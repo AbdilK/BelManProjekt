@@ -5,11 +5,15 @@
  */
 package belman.gui.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 
 /**
@@ -39,6 +43,8 @@ public class MainWindowController implements Initializable {
     private Button btnSix;
     @FXML
     private Button btnSeven;
+    @FXML
+    private AnchorPane MainWindowPane;
 
     /**
      * Initializes the controller class.
@@ -47,5 +53,11 @@ public class MainWindowController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void OpenHalfab(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../view/HalfabWindow.fxml"));
+        MainWindowPane.getChildren().setAll(pane);
+    }
     
 }
