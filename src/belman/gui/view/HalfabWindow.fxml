@@ -12,16 +12,16 @@
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" fx:id="" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="belman.gui.controller.HalfabWindowController">
+<AnchorPane id="AnchorPane" fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="belman.gui.controller.HalfabWindowController">
 
     <stylesheets>
         <URL value="@stylesheet.css" />
     </stylesheets>
    <children>
-      <AnchorPane id="AnchorPane" layoutY="-108.0" prefHeight="469.0" prefWidth="600.0" styleClass="BelMan" stylesheets="@stylesheet.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane id="AnchorPane" layoutY="-108.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" styleClass="BelMan" stylesheets="@stylesheet.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <ToolBar prefHeight="40.0" prefWidth="641.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <TableView layoutY="40.0" prefHeight="347.0" prefWidth="448.0">
+            <TableView layoutY="40.0" prefHeight="446.0" prefWidth="448.0">
               <columns>
                   <TableColumn minWidth="2.0" prefWidth="94.0" text="Ordrenummer" />
                   <TableColumn minWidth="2.0" prefWidth="76.0" text="Status" />
