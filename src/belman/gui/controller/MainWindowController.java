@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -57,51 +58,79 @@ public class MainWindowController implements Initializable {
    @FXML
     private void openHalfab(ActionEvent event) throws IOException 
     {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/belman/gui/view/HalfabWindow.fxml"));
-        MainWindowPane.getChildren().setAll(pane);
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/belman/gui/view/DepartmentWindow.fxml"));
+        Parent root = fxmlLoader.load();
+        belman.gui.controller.DepartmentWindowController nextController = fxmlLoader.getController();
+        nextController.setLblAfdeling("Halfab");
+        nextController.setDepartmentId(1);
+        MainWindowPane.getChildren().setAll(root);
         // den vil ikke dur, dog vil de andre
     }
 
     @FXML
     private void openMontage1(ActionEvent event) throws IOException 
     {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/belman/gui/view/Montage1Window.fxml"));
-        MainWindowPane.getChildren().setAll(pane);  
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/belman/gui/view/DepartmentWindow.fxml"));
+        Parent root = fxmlLoader.load();
+        belman.gui.controller.DepartmentWindowController nextController = fxmlLoader.getController();
+        nextController.setLblAfdeling("Montage1");
+        nextController.setDepartmentId(2);
+        MainWindowPane.getChildren().setAll(root);
     }
 
     @FXML
     private void openBertel(ActionEvent event) throws IOException 
     {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/belman/gui/view/BertelWindow.fxml"));
-        MainWindowPane.getChildren().setAll(pane);
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/belman/gui/view/DepartmentWindow.fxml"));
+        Parent root = fxmlLoader.load();
+        belman.gui.controller.DepartmentWindowController nextController = fxmlLoader.getController();
+        nextController.setLblAfdeling("Bertel");
+        nextController.setDepartmentId(3);
+        MainWindowPane.getChildren().setAll(root);
     }
 
     @FXML
     private void openBælg(ActionEvent event) throws IOException 
     {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/belman/gui/view/BælgWindow.fxml"));
-        MainWindowPane.getChildren().setAll(pane);
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/belman/gui/view/DepartmentWindow.fxml"));
+        Parent root = fxmlLoader.load();
+        belman.gui.controller.DepartmentWindowController nextController = fxmlLoader.getController();
+        nextController.setLblAfdeling("Bælg");
+        nextController.setDepartmentId(4);
+        MainWindowPane.getChildren().setAll(root);
     }
 
     @FXML
     private void openMontage2(ActionEvent event)  throws IOException 
     {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/belman/gui/view/Montage2Window.fxml"));
-        MainWindowPane.getChildren().setAll(pane);
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/belman/gui/view/DepartmentWindow.fxml"));
+        Parent root = fxmlLoader.load();
+        belman.gui.controller.DepartmentWindowController nextController = fxmlLoader.getController();
+        nextController.setLblAfdeling("Monatge2");
+        nextController.setDepartmentId(5);
+        MainWindowPane.getChildren().setAll(root);
     }
 
     @FXML
     private void openMaler(ActionEvent event) throws IOException 
     {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/belman/gui/view/MalerWindow.fxml"));
-        MainWindowPane.getChildren().setAll(pane);
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/belman/gui/view/DepartmentWindow.fxml"));
+        Parent root = fxmlLoader.load();
+        belman.gui.controller.DepartmentWindowController nextController = fxmlLoader.getController();
+        nextController.setLblAfdeling("Maler");
+        nextController.setDepartmentId(6);
+        MainWindowPane.getChildren().setAll(root);
     }
 
     @FXML
     private void openForsendelse(ActionEvent event) throws IOException 
     {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/belman/gui/view/ForsendelseWindow.fxml"));
-        MainWindowPane.getChildren().setAll(pane);
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/belman/gui/view/DepartmentWindow.fxml"));
+        Parent root = fxmlLoader.load();
+        belman.gui.controller.DepartmentWindowController nextController = fxmlLoader.getController();
+        nextController.setLblAfdeling("Forsendelse");
+        nextController.setDepartmentId(7);
+        MainWindowPane.getChildren().setAll(root);
     }
 
     

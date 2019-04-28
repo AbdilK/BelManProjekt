@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
 /**
@@ -20,14 +21,17 @@ import javafx.scene.layout.AnchorPane;
  *
  * @author Qash
  */
-public class ForsendelseWindowController implements Initializable {
+public class DepartmentWindowController implements Initializable {
 
     @FXML
     private Button PrevBtn;
     @FXML
     private Button NextBtn;
     @FXML
-    private AnchorPane forsendelsePane;
+    private AnchorPane bertelPane;
+    @FXML
+    private Label lblAfdeling;
+    private int departmentId;
 
     /**
      * Initializes the controller class.
@@ -41,11 +45,19 @@ public class ForsendelseWindowController implements Initializable {
     private void PreviousPage(ActionEvent event) throws IOException 
     {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("/belman/gui/view/MainWindow.fxml"));
-        forsendelsePane.getChildren().setAll(pane);
+        bertelPane.getChildren().setAll(pane);
     }
 
     @FXML
     private void NextPage(ActionEvent event) {
+    }
+    
+    public void setLblAfdeling(String department){
+        lblAfdeling.setText("Afdeling: " + department);
+    }
+    
+    public void setDepartmentId(int id){
+        departmentId=id;
     }
     
 }
