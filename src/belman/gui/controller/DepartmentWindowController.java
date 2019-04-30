@@ -14,6 +14,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.AnchorPane;
 
 /**
@@ -32,6 +33,8 @@ public class DepartmentWindowController implements Initializable {
     @FXML
     private Label lblAfdeling;
     private int departmentId;
+    @FXML
+    private ProgressBar progressBar;
 
     /**
      * Initializes the controller class.

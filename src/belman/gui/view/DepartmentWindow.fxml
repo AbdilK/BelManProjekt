@@ -33,7 +33,7 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <ProgressBar layoutY="491.0" prefHeight="32.0" prefWidth="448.0" progress="0.0" />
+            <ProgressBar fx:id="progressBar" layoutY="491.0" prefHeight="32.0" prefWidth="448.0" progress="0.0" />
          </children>
       </AnchorPane>
       <ToolBar layoutX="530.0" prefHeight="40.0" prefWidth="113.0" AnchorPane.leftAnchor="530.0" AnchorPane.rightAnchor="-43.0" AnchorPane.topAnchor="0.0">
