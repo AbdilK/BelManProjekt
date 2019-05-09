@@ -7,9 +7,8 @@ package belman.be;
 
 /**
  *
- * @author Qash
+ * @author Abdil-K
  */
-
 import java.util.HashMap;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -22,14 +21,14 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
 "__type",
-"OrderNumber"
+"Name"
 })
-public class Order {
+public class Customer {
 
 @JsonProperty("__type")
 private String type;
-@JsonProperty("OrderNumber")
-private String orderNumber;
+@JsonProperty("Name")
+private String name;
 @JsonIgnore
 private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -43,14 +42,14 @@ public void setType(String type) {
 this.type = type;
 }
 
-@JsonProperty("OrderNumber")
-public String getOrderNumber() {
-return orderNumber;
+@JsonProperty("Name")
+public String getName() {
+return name;
 }
 
-@JsonProperty("OrderNumber")
-public void setOrderNumber(String orderNumber) {
-this.orderNumber = orderNumber;
+@JsonProperty("Name")
+public void setName(String name) {
+this.name = name;
 }
 
 @JsonAnyGetter

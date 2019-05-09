@@ -7,7 +7,7 @@ package belman.be;
 
 /**
  *
- * @author Qash
+ * @author Abdil-K
  */
 
 import java.util.HashMap;
@@ -22,14 +22,23 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
 "__type",
-"OrderNumber"
+"Department",
+"EndDate",
+"FinishedOrder",
+"StartDate"
 })
-public class Order {
+public class DepartmentTask {
 
 @JsonProperty("__type")
 private String type;
-@JsonProperty("OrderNumber")
-private String orderNumber;
+@JsonProperty("Department")
+private Department department;
+@JsonProperty("EndDate")
+private String endDate;
+@JsonProperty("FinishedOrder")
+private Boolean finishedOrder;
+@JsonProperty("StartDate")
+private String startDate;
 @JsonIgnore
 private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -43,14 +52,44 @@ public void setType(String type) {
 this.type = type;
 }
 
-@JsonProperty("OrderNumber")
-public String getOrderNumber() {
-return orderNumber;
+@JsonProperty("Department")
+public Department getDepartment() {
+return department;
 }
 
-@JsonProperty("OrderNumber")
-public void setOrderNumber(String orderNumber) {
-this.orderNumber = orderNumber;
+@JsonProperty("Department")
+public void setDepartment(Department department) {
+this.department = department;
+}
+
+@JsonProperty("EndDate")
+public String getEndDate() {
+return endDate;
+}
+
+@JsonProperty("EndDate")
+public void setEndDate(String endDate) {
+this.endDate = endDate;
+}
+
+@JsonProperty("FinishedOrder")
+public Boolean getFinishedOrder() {
+return finishedOrder;
+}
+
+@JsonProperty("FinishedOrder")
+public void setFinishedOrder(Boolean finishedOrder) {
+this.finishedOrder = finishedOrder;
+}
+
+@JsonProperty("StartDate")
+public String getStartDate() {
+return startDate;
+}
+
+@JsonProperty("StartDate")
+public void setStartDate(String startDate) {
+this.startDate = startDate;
 }
 
 @JsonAnyGetter

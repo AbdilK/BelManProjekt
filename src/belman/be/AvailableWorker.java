@@ -7,9 +7,8 @@ package belman.be;
 
 /**
  *
- * @author Qash
+ * @author Abdil-K
  */
-
 import java.util.HashMap;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -22,14 +21,20 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
 "__type",
-"OrderNumber"
+"Initials",
+"Name",
+"SalaryNumber"
 })
-public class Order {
+public class AvailableWorker {
 
 @JsonProperty("__type")
 private String type;
-@JsonProperty("OrderNumber")
-private String orderNumber;
+@JsonProperty("Initials")
+private String initials;
+@JsonProperty("Name")
+private String name;
+@JsonProperty("SalaryNumber")
+private Integer salaryNumber;
 @JsonIgnore
 private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -43,14 +48,34 @@ public void setType(String type) {
 this.type = type;
 }
 
-@JsonProperty("OrderNumber")
-public String getOrderNumber() {
-return orderNumber;
+@JsonProperty("Initials")
+public String getInitials() {
+return initials;
 }
 
-@JsonProperty("OrderNumber")
-public void setOrderNumber(String orderNumber) {
-this.orderNumber = orderNumber;
+@JsonProperty("Initials")
+public void setInitials(String initials) {
+this.initials = initials;
+}
+
+@JsonProperty("Name")
+public String getName() {
+return name;
+}
+
+@JsonProperty("Name")
+public void setName(String name) {
+this.name = name;
+}
+
+@JsonProperty("SalaryNumber")
+public Integer getSalaryNumber() {
+return salaryNumber;
+}
+
+@JsonProperty("SalaryNumber")
+public void setSalaryNumber(Integer salaryNumber) {
+this.salaryNumber = salaryNumber;
 }
 
 @JsonAnyGetter

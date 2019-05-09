@@ -1,16 +1,18 @@
+package belman.be;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package belman.be;
 
 /**
  *
- * @author Qash
+ * @author Abdil-K
  */
-
+import belman.be.AvailableWorker;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
@@ -21,36 +23,36 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-"__type",
-"OrderNumber"
+"AvailableWorkers",
+"ProductionOrders"
 })
-public class Order {
+public class Example {
 
-@JsonProperty("__type")
-private String type;
-@JsonProperty("OrderNumber")
-private String orderNumber;
+@JsonProperty("AvailableWorkers")
+private List<AvailableWorker> availableWorkers = null;
+@JsonProperty("ProductionOrders")
+private List<ProductionOrder> productionOrders = null;
 @JsonIgnore
 private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-@JsonProperty("__type")
-public String getType() {
-return type;
+@JsonProperty("AvailableWorkers")
+public List<AvailableWorker> getAvailableWorkers() {
+return availableWorkers;
 }
 
-@JsonProperty("__type")
-public void setType(String type) {
-this.type = type;
+@JsonProperty("AvailableWorkers")
+public void setAvailableWorkers(List<AvailableWorker> availableWorkers) {
+this.availableWorkers = availableWorkers;
 }
 
-@JsonProperty("OrderNumber")
-public String getOrderNumber() {
-return orderNumber;
+@JsonProperty("ProductionOrders")
+public List<ProductionOrder> getProductionOrders() {
+return productionOrders;
 }
 
-@JsonProperty("OrderNumber")
-public void setOrderNumber(String orderNumber) {
-this.orderNumber = orderNumber;
+@JsonProperty("ProductionOrders")
+public void setProductionOrders(List<ProductionOrder> productionOrders) {
+this.productionOrders = productionOrders;
 }
 
 @JsonAnyGetter
