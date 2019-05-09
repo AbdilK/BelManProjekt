@@ -7,10 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="530.0" prefWidth="600.0" styleClass="BelMan" stylesheets="@stylesheet.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="belman.gui.controller.ProgressWindowController">
+<AnchorPane id="AnchorPane" prefHeight="530.0" prefWidth="600.0" styleClass="BelMan" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="belman.gui.controller.ProgressWindowController">
    <children>
-      <ProgressBar fx:id="progbarHours" layoutX="14.0" layoutY="476.0" prefHeight="37.0" prefWidth="570.0" progress="0.68" />
+      <ProgressBar fx:id="progbarHours" layoutX="14.0" layoutY="476.0" prefHeight="37.0" prefWidth="570.0" progress="0.66" />
       <Label layoutX="14.0" layoutY="425.0" prefHeight="37.0" prefWidth="120.0" text="Progress" textFill="WHITE">
          <font>
             <Font size="30.0" />
