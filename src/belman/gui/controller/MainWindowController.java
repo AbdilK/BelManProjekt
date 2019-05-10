@@ -7,6 +7,7 @@ package belman.gui.controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -56,80 +57,87 @@ public class MainWindowController implements Initializable {
     }    
 
    @FXML
-    private void openHalfab(ActionEvent event) throws IOException 
+    private void openHalfab(ActionEvent event) throws IOException, SQLException 
     {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/belman/gui/view/DepartmentWindow.fxml"));
         Parent root = fxmlLoader.load();
         belman.gui.controller.DepartmentWindowController nextController = fxmlLoader.getController();
         nextController.setLblAfdeling("Halfab");
         nextController.setDepartmentId(1);
+        nextController.getOrders();
         MainWindowPane.getChildren().setAll(root);
         // den vil ikke dur, dog vil de andre
     }
 
     @FXML
-    private void openMontage1(ActionEvent event) throws IOException 
+    private void openMontage1(ActionEvent event) throws IOException, SQLException 
     {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/belman/gui/view/DepartmentWindow.fxml"));
         Parent root = fxmlLoader.load();
         belman.gui.controller.DepartmentWindowController nextController = fxmlLoader.getController();
         nextController.setLblAfdeling("Montage1");
         nextController.setDepartmentId(3);
+        nextController.getOrders();
         MainWindowPane.getChildren().setAll(root);
     }
 
     @FXML
-    private void openBertel(ActionEvent event) throws IOException 
+    private void openBertel(ActionEvent event) throws IOException, SQLException 
     {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/belman/gui/view/DepartmentWindow.fxml"));
         Parent root = fxmlLoader.load();
         belman.gui.controller.DepartmentWindowController nextController = fxmlLoader.getController();
         nextController.setLblAfdeling("Bertel");
         nextController.setDepartmentId(5);
+        nextController.getOrders();
         MainWindowPane.getChildren().setAll(root);
     }
 
     @FXML
-    private void openBælg(ActionEvent event) throws IOException 
+    private void openBælg(ActionEvent event) throws IOException, SQLException 
     {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/belman/gui/view/DepartmentWindow.fxml"));
         Parent root = fxmlLoader.load();
         belman.gui.controller.DepartmentWindowController nextController = fxmlLoader.getController();
         nextController.setLblAfdeling("Bælg");
         nextController.setDepartmentId(2);
+        nextController.getOrders();
         MainWindowPane.getChildren().setAll(root);
     }
 
     @FXML
-    private void openMontage2(ActionEvent event)  throws IOException 
+    private void openMontage2(ActionEvent event)  throws IOException, SQLException 
     {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/belman/gui/view/DepartmentWindow.fxml"));
         Parent root = fxmlLoader.load();
         belman.gui.controller.DepartmentWindowController nextController = fxmlLoader.getController();
         nextController.setLblAfdeling("Montage2");
         nextController.setDepartmentId(4);
+        nextController.getOrders();
         MainWindowPane.getChildren().setAll(root);
     }
 
     @FXML
-    private void openMaler(ActionEvent event) throws IOException 
+    private void openMaler(ActionEvent event) throws IOException, SQLException 
     {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/belman/gui/view/DepartmentWindow.fxml"));
         Parent root = fxmlLoader.load();
         belman.gui.controller.DepartmentWindowController nextController = fxmlLoader.getController();
         nextController.setLblAfdeling("Maler");
         nextController.setDepartmentId(6);
+        nextController.getOrders();
         MainWindowPane.getChildren().setAll(root);
     }
 
     @FXML
-    private void openForsendelse(ActionEvent event) throws IOException 
+    private void openForsendelse(ActionEvent event) throws IOException, SQLException 
     {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/belman/gui/view/DepartmentWindow.fxml"));
         Parent root = fxmlLoader.load();
         belman.gui.controller.DepartmentWindowController nextController = fxmlLoader.getController();
         nextController.setLblAfdeling("Forsendelse");
         nextController.setDepartmentId(7);
+        nextController.getOrders();
         MainWindowPane.getChildren().setAll(root);
     }
 

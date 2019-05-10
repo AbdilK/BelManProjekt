@@ -32,7 +32,7 @@ public class DepartmentOrder {
         return currentDepartment;
     }
     
-    public void setDate(String currentDepartment) {
+    public void setCurrentDepartment(String currentDepartment) {
         this.currentDepartment = currentDepartment;
     }
     

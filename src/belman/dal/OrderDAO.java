@@ -23,16 +23,16 @@ import belman.be.DepartmentOrder;
  */
 public class OrderDAO {
     
-    private DBConnectionProvider db;
+    private DBConnectionProvider db = new DBConnectionProvider();
     
     public List<DepartmentOrder> getAllDepartmentOrders(int departmentId) throws SQLException {
         List<DepartmentOrder> listOrders = new ArrayList<>();
         try (Connection con = db.getConnection()) {
             PreparedStatement stmt;
             stmt = con.prepareStatement(
-                    "select [Order].OrderNumber, [Order].CurrentDepartment, [Relations].DepartmentStart," + 
-                    " [Relations].DepartmentEnd, [Relations].LastDepartment from [Order] join [Relations]" +
-                    "on [Order].OrderNumber=[Relations].OrderNumber where [Relations].DepartmentId=?" +
+                    "select [Order].OrderNumber, [Order].CurrentDepartment, [Relations].DepartmentStart, " + 
+                    "[Relations].DepartmentEnd, [Relations].LastDepartment from [Order] join [Relations] " +
+                    "on [Order].OrderNumber=[Relations].OrderNumber where [Relations].DepartmentId=? " +
                     "and [Relations].DepartmentStart <= (convert(date, getdate()));"
                     );
             stmt.setInt(1, departmentId);
@@ -42,8 +42,15 @@ public class OrderDAO {
                 order.setOrderNumber(rs.getInt("OrderNumber"));
                 order.setDepartmentStart(rs.getDate("DepartmentStart"));
                 order.setDepartmentEnd(rs.getDate("DepartmentEnd"));
+                order.setCurrentDepartment(getDepartmentName(rs.getInt("CurrentDepartment")));
                 order.setStatus(true);
-                order.setLastDepartment(getDepartmentName(rs.getInt("LastDepartment")));
+                int lastId = rs.getInt("LastDepartment");
+                if(lastId > 0) {
+                    order.setLastDepartment(getDepartmentName(lastId));
+                }
+                else {
+                    order.setLastDepartment("ingen");
+                }
                 listOrders.add(order);
             }
         } catch (SQLException ex) {
@@ -53,15 +60,17 @@ public class OrderDAO {
     }
     
     public String getDepartmentName(int departmentId) throws SQLException {
-        String departmentName = null;
+        String departmentName = "fejl";
         try (Connection con = db.getConnection()) {
             PreparedStatement stmt;
             stmt = con.prepareStatement(
-                    "select from Department where DepartmentID = ?"
+                    "select * from [Department] where DepartmentID = ?"
                     );
             stmt.setInt(1, departmentId);
             ResultSet rs = stmt.executeQuery();
-            departmentName = rs.getString("DepartmentName");
+            while (rs.next()) {
+                departmentName = rs.getString("DepartmentName");
+            }
         }
         
         return departmentName;

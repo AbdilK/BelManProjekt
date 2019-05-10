@@ -20,6 +20,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import belman.be.DepartmentOrder;
 import belman.gui.controller.DepartmentOrderModel;
+import java.sql.SQLException;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
@@ -38,6 +39,7 @@ public class DepartmentWindowController implements Initializable {
     @FXML
     private Label lblAfdeling;
     private int departmentId;
+    private DepartmentOrderModel model = new DepartmentOrderModel();
     @FXML
     private ProgressBar progressBar;
     @FXML
@@ -58,7 +60,7 @@ public class DepartmentWindowController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        tbcOrderNumber.setCellValueFactory(new PropertyValueFactory("ordernumber"));
+        tbcOrderNumber.setCellValueFactory(new PropertyValueFactory("orderNumber"));
         tbcStatus.setCellValueFactory(new PropertyValueFactory("status"));
         tbcAfdeling.setCellValueFactory(new PropertyValueFactory("currentDepartment"));
         tbcStartDato.setCellValueFactory(new PropertyValueFactory("departmentStart"));
@@ -84,6 +86,9 @@ public class DepartmentWindowController implements Initializable {
         departmentId=id;
     }
     
-    
+    public void getOrders() throws SQLException {
+        model.loadOrders(departmentId);
+        tbvOrders.setItems(model.getOrders());
+    }
     
 }
