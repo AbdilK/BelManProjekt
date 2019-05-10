@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="bertelPane" prefHeight="553.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="belman.gui.controller.DepartmentWindowController">
+<AnchorPane id="AnchorPane" fx:id="bertelPane" prefHeight="553.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="belman.gui.controller.DepartmentWindowController">
 
     <stylesheets>
         <URL value="@stylesheet.css" />
@@ -19,16 +19,16 @@
       <AnchorPane id="AnchorPane" layoutY="-108.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="600.0" styleClass="BelMan" stylesheets="@stylesheet.css" AnchorPane.bottomAnchor="-35.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <ToolBar prefHeight="40.0" prefWidth="641.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <TableView layoutY="40.0" prefHeight="428.0" prefWidth="448.0">
+            <TableView fx:id="tbvOrders" layoutY="40.0" prefHeight="428.0" prefWidth="448.0">
               <columns>
-                  <TableColumn minWidth="2.0" prefWidth="94.0" text="Ordrenummer" />
-                  <TableColumn minWidth="2.0" prefWidth="76.0" text="Status" />
-                <TableColumn prefWidth="128.0" text="Nuværende afdeling" />
-                <TableColumn minWidth="2.0" prefWidth="78.0" text="Start dato" />
-                  <TableColumn minWidth="2.0" prefWidth="72.0" text="Slut dato" />
+                  <TableColumn fx:id="tbcOrderNumber" minWidth="2.0" prefWidth="94.0" text="Ordrenummer" />
+                  <TableColumn fx:id="tbcStatus" minWidth="2.0" prefWidth="76.0" text="Status" />
+                <TableColumn fx:id="tbcAfdeling" prefWidth="128.0" text="Nuværende afdeling" />
+                <TableColumn fx:id="tbcStartDato" minWidth="2.0" prefWidth="78.0" text="Start dato" />
+                  <TableColumn fx:id="tbcSlutDato" minWidth="2.0" prefWidth="72.0" text="Slut dato" />
               </columns>
             </TableView>
-            <Label fx:id="lblAfdeling" layoutX="448.0" layoutY="40.0" text="Afdeling: Bertel" textFill="WHITE">
+            <Label fx:id="lblAfdeling" layoutX="448.0" layoutY="40.0" text="Afdeling:" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>

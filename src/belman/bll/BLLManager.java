@@ -5,11 +5,19 @@
  */
 package belman.bll;
 
+import belman.be.DepartmentOrder;
+import belman.dal.OrderDAO;
+import java.sql.SQLException;
+import java.util.List;
 /**
  *
  * @author Abdil-K
  */
 public class BLLManager
 {
+    private OrderDAO dao = new OrderDAO();
     
+    public List<DepartmentOrder> getAllDepartmentOrders(int departmentId) throws SQLException {
+        return dao.getAllDepartmentOrders(departmentId);
+    }
 }

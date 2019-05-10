@@ -15,7 +15,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
+import belman.be.DepartmentOrder;
+import belman.gui.controller.DepartmentOrderModel;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
  * FXML Controller class
@@ -35,13 +40,29 @@ public class DepartmentWindowController implements Initializable {
     private int departmentId;
     @FXML
     private ProgressBar progressBar;
+    @FXML
+    private TableView<DepartmentOrder> tbvOrders;
+    @FXML
+    private TableColumn<DepartmentOrder, String> tbcOrderNumber;
+    @FXML
+    private TableColumn<DepartmentOrder, String> tbcStatus;
+    @FXML
+    private TableColumn<DepartmentOrder, String> tbcAfdeling;
+    @FXML
+    private TableColumn<DepartmentOrder, String> tbcStartDato;
+    @FXML
+    private TableColumn<DepartmentOrder, String> tbcSlutDato;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        tbcOrderNumber.setCellValueFactory(new PropertyValueFactory("ordernumber"));
+        tbcStatus.setCellValueFactory(new PropertyValueFactory("status"));
+        tbcAfdeling.setCellValueFactory(new PropertyValueFactory("currentDepartment"));
+        tbcStartDato.setCellValueFactory(new PropertyValueFactory("departmentStart"));
+        tbcSlutDato.setCellValueFactory(new PropertyValueFactory("departmentEnd"));
     }    
 
     @FXML
@@ -62,5 +83,7 @@ public class DepartmentWindowController implements Initializable {
     public void setDepartmentId(int id){
         departmentId=id;
     }
+    
+    
     
 }
