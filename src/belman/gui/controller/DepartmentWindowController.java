@@ -71,7 +71,7 @@ public class DepartmentWindowController implements Initializable {
             protected void updateItem(Boolean item, boolean empty) {
                 super.updateItem(item, empty);
                 setText(empty ? null
-                        : item.booleanValue() ? "Done" : "Delayed");
+                        : item.booleanValue() ? "Ready" : "Delayed");
             }
         });
     }    
