@@ -21,6 +21,7 @@ import javafx.scene.layout.AnchorPane;
 import belman.be.DepartmentOrder;
 import belman.gui.controller.DepartmentOrderModel;
 import java.sql.SQLException;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
@@ -47,7 +48,7 @@ public class DepartmentWindowController implements Initializable {
     @FXML
     private TableColumn<DepartmentOrder, String> tbcOrderNumber;
     @FXML
-    private TableColumn<DepartmentOrder, String> tbcStatus;
+    private TableColumn<DepartmentOrder, Boolean> tbcStatus;
     @FXML
     private TableColumn<DepartmentOrder, String> tbcAfdeling;
     @FXML
@@ -65,6 +66,14 @@ public class DepartmentWindowController implements Initializable {
         tbcAfdeling.setCellValueFactory(new PropertyValueFactory("currentDepartment"));
         tbcStartDato.setCellValueFactory(new PropertyValueFactory("departmentStart"));
         tbcSlutDato.setCellValueFactory(new PropertyValueFactory("departmentEnd"));
+        tbcStatus.setCellFactory(tc -> new TableCell<DepartmentOrder, Boolean>() {
+            @Override
+            protected void updateItem(Boolean item, boolean empty) {
+                super.updateItem(item, empty);
+                setText(empty ? null
+                        : item.booleanValue() ? "Done" : "Delayed");
+            }
+        });
     }    
 
     @FXML
