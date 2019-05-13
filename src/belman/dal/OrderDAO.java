@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import belman.bll.DBConnectionProvider;
 import belman.be.DepartmentOrder;
+import com.microsoft.sqlserver.jdbc.SQLServerException;
 
 /**
  *
@@ -43,7 +44,7 @@ public class OrderDAO {
                 order.setDepartmentStart(rs.getDate("DepartmentStart"));
                 order.setDepartmentEnd(rs.getDate("DepartmentEnd"));
                 order.setCurrentDepartment(getDepartmentName(rs.getInt("CurrentDepartment")));
-                order.setStatus(true);
+                order.setStatus(getIsReady(rs.getInt("OrderNumber"), rs.getInt("LastDepartment")));
                 int lastId = rs.getInt("LastDepartment");
                 if(lastId > 0) {
                     order.setLastDepartment(getDepartmentName(lastId));
@@ -74,5 +75,28 @@ public class OrderDAO {
         }
         
         return departmentName;
+    }
+    
+    public boolean getIsReady(int orderNumber, int lastDepartment) throws SQLServerException, SQLException{
+        boolean ready = false;
+        if(lastDepartment==0) {
+            ready = true;
+        }
+        else {
+        try (Connection con = db.getConnection()) {
+            PreparedStatement stmt;
+            stmt = con.prepareStatement(
+                    "SELECT [Relations].Status FROM [Relations] WHERE OrderNumber = ? AND DepartmentId = ?;"
+                    );
+            stmt.setInt(1, orderNumber);
+            stmt.setInt(2, lastDepartment);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                ready = rs.getBoolean("Status");
+            }
+        }
+        }
+        
+        return ready;
     }
 }
