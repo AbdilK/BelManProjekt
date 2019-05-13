@@ -79,12 +79,12 @@
                   </Button>
                </children>
             </GridPane>
-            <Label layoutX="144.0" layoutY="96.0" prefHeight="51.0" prefWidth="465.0" text="Please choose a department" textFill="WHITE">
+            <Label layoutX="121.0" layoutY="74.0" prefHeight="51.0" prefWidth="781.0" text="Please choose a department" textFill="WHITE">
                <font>
                   <Font size="35.0" />
                </font>
             </Label>
-            <ImageView fitHeight="92.0" fitWidth="150.0" layoutX="14.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="80.0" fitWidth="113.0" layoutX="14.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../belmanpic.PNG" />
                </image>
