@@ -32,32 +32,32 @@
                 <RowConstraints maxHeight="143.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="btnOne" minHeight="-Infinity" mnemonicParsing="false" onAction="#openHalfab" prefHeight="105.0" prefWidth="315.0" text="1. Halfab">
+                  <Button fx:id="btnOne" minHeight="-Infinity" mnemonicParsing="false" onAction="#openHalfab" prefHeight="105.0" prefWidth="315.0" text="Halfab">
                      <font>
                         <Font size="35.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnThree" minHeight="-Infinity" mnemonicParsing="false" onAction="#openMontage1" prefHeight="105.0" prefWidth="315.0" text="3. Montage 1" GridPane.rowIndex="1">
+                  <Button fx:id="btnThree" minHeight="-Infinity" mnemonicParsing="false" onAction="#openMontage1" prefHeight="105.0" prefWidth="315.0" text="Montage 1" GridPane.rowIndex="1">
                      <font>
                         <Font size="35.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnFive" minHeight="-Infinity" mnemonicParsing="false" onAction="#openBertel" prefHeight="105.0" prefWidth="315.0" text="5. Bertel" GridPane.rowIndex="2">
+                  <Button fx:id="btnFive" minHeight="-Infinity" mnemonicParsing="false" onAction="#openBertel" prefHeight="105.0" prefWidth="315.0" text="Bertel" GridPane.rowIndex="2">
                      <font>
                         <Font size="35.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnTwo" minHeight="-Infinity" mnemonicParsing="false" onAction="#openBælg" prefHeight="105.0" prefWidth="285.0" text="2. Bælg" GridPane.columnIndex="1">
+                  <Button fx:id="btnTwo" minHeight="-Infinity" mnemonicParsing="false" onAction="#openBælg" prefHeight="105.0" prefWidth="285.0" text="Bælg" GridPane.columnIndex="1">
                      <font>
                         <Font size="35.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnFour" minHeight="-Infinity" mnemonicParsing="false" onAction="#openMontage2" prefHeight="105.0" prefWidth="285.0" text="4. Montage 2" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Button fx:id="btnFour" minHeight="-Infinity" mnemonicParsing="false" onAction="#openMontage2" prefHeight="105.0" prefWidth="285.0" text="Montage 2" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="35.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnSix" minHeight="-Infinity" mnemonicParsing="false" onAction="#openMaler" prefHeight="105.0" prefWidth="285.0" text="6. Maler" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Button fx:id="btnSix" minHeight="-Infinity" mnemonicParsing="false" onAction="#openMaler" prefHeight="105.0" prefWidth="285.0" text="Maler" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font size="35.0" />
                      </font>
@@ -72,7 +72,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="btnSeven" mnemonicParsing="false" onAction="#openForsendelse" prefHeight="123.0" prefWidth="600.0" text="7. Forsendelse">
+                  <Button fx:id="btnSeven" mnemonicParsing="false" onAction="#openForsendelse" prefHeight="123.0" prefWidth="600.0" text="Forsendelse">
                      <font>
                         <Font size="35.0" />
                      </font>
