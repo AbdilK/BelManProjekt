@@ -55,6 +55,32 @@ public class DepartmentWindowController implements Initializable {
     private TableColumn<DepartmentOrder, String> tbcStartDato;
     @FXML
     private TableColumn<DepartmentOrder, String> tbcSlutDato;
+    @FXML
+    private Label orderIdLabel;
+    @FXML
+    private Label currentDepartmentLabel;
+    @FXML
+    private Label startDateLabel;
+    @FXML
+    private Label endDateLabel;
+    @FXML
+    private Label shippingDateLabel;
+    @FXML
+    private Label progressLabel;
+    @FXML
+    private Label lblOrderId;
+    @FXML
+    private Label lblCurrentDep;
+    @FXML
+    private Label lblStatus;
+    @FXML
+    private Label lblStartDate;
+    @FXML
+    private Label lblEndDate;
+    @FXML
+    private Label lblShippingDate;
+    @FXML
+    private Button markAsDoneButton;
 
     /**
      * Initializes the controller class.
@@ -98,6 +124,10 @@ public class DepartmentWindowController implements Initializable {
     public void getOrders() throws SQLException {
         model.loadOrders(departmentId);
         tbvOrders.setItems(model.getOrders());
+    }
+
+    @FXML
+    private void orderDone(ActionEvent event) {
     }
     
 }

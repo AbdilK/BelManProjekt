@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="bertelPane" prefHeight="553.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="belman.gui.controller.DepartmentWindowController">
+<AnchorPane id="AnchorPane" fx:id="bertelPane" prefHeight="553.0" prefWidth="850.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="belman.gui.controller.DepartmentWindowController">
 
     <stylesheets>
         <URL value="@stylesheet.css" />
@@ -19,7 +19,7 @@
       <AnchorPane id="AnchorPane" layoutY="-108.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="600.0" styleClass="BelMan" stylesheets="@stylesheet.css" AnchorPane.bottomAnchor="-35.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <ToolBar prefHeight="40.0" prefWidth="641.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <TableView fx:id="tbvOrders" layoutY="40.0" prefHeight="428.0" prefWidth="448.0">
+            <TableView fx:id="tbvOrders" layoutY="40.0" prefHeight="546.0" prefWidth="448.0">
               <columns>
                   <TableColumn fx:id="tbcOrderNumber" minWidth="2.0" prefWidth="94.0" text="Ordrenummer" />
                   <TableColumn fx:id="tbcStatus" minWidth="2.0" prefWidth="76.0" text="Status" />
@@ -33,10 +33,76 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <ProgressBar fx:id="progressBar" layoutY="491.0" prefHeight="32.0" prefWidth="448.0" progress="0.0" />
+            <ProgressBar fx:id="progressBar" layoutX="448.0" layoutY="554.0" prefHeight="32.0" prefWidth="399.0" progress="0.0" />
+            <Label fx:id="orderIdLabel" layoutX="448.0" layoutY="69.0" prefHeight="39.0" prefWidth="168.0" text="Order Id = " textFill="WHITE">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <Label fx:id="currentDepartmentLabel" layoutX="448.0" layoutY="134.0" text="Current Department = " textFill="WHITE">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <Label fx:id="startDateLabel" layoutX="448.0" layoutY="255.0" prefHeight="39.0" prefWidth="168.0" text="Start Date = " textFill="WHITE">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <Label fx:id="endDateLabel" layoutX="450.0" layoutY="328.0" text="End Date = " textFill="WHITE">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <Label fx:id="shippingDateLabel" layoutX="448.0" layoutY="397.0" text="Shipping Date = " textFill="WHITE">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <Label fx:id="progressLabel" layoutX="447.0" layoutY="515.0" text="Progress" textFill="WHITE">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblOrderId" layoutX="730.0" layoutY="66.0" prefHeight="45.0" prefWidth="120.0" textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblCurrentDep" layoutX="730.0" layoutY="131.0" prefHeight="45.0" prefWidth="120.0" textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblStatus" layoutX="730.0" layoutY="189.0" prefHeight="45.0" prefWidth="120.0" textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblStartDate" layoutX="730.0" layoutY="252.0" prefHeight="45.0" prefWidth="120.0" textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblEndDate" layoutX="730.0" layoutY="325.0" prefHeight="45.0" prefWidth="120.0" textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="447.0" layoutY="189.0" prefHeight="45.0" prefWidth="120.0" text="Status = " textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblShippingDate" layoutX="730.0" layoutY="396.0" prefHeight="45.0" prefWidth="120.0" textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Button fx:id="markAsDoneButton" layoutX="470.0" layoutY="441.0" mnemonicParsing="false" onAction="#orderDone" prefHeight="70.0" prefWidth="363.0" text="Mark as done" />
          </children>
       </AnchorPane>
-      <ToolBar layoutX="530.0" prefHeight="40.0" prefWidth="113.0" AnchorPane.leftAnchor="530.0" AnchorPane.rightAnchor="-43.0" AnchorPane.topAnchor="0.0">
+      <ToolBar layoutX="781.0" prefHeight="40.0" prefWidth="112.0" AnchorPane.leftAnchor="781.0" AnchorPane.rightAnchor="-43.0" AnchorPane.topAnchor="0.0">
          <items>
             <Button fx:id="PrevBtn" mnemonicParsing="false" onAction="#PreviousPage" text="&lt;" />
             <Button fx:id="NextBtn" mnemonicParsing="false" onAction="#NextPage" text="&gt;" />
