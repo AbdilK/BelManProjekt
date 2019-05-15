@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="bertelPane" prefHeight="553.0" prefWidth="850.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="belman.gui.controller.DepartmentWindowController">
+<AnchorPane id="AnchorPane" fx:id="bertelPane" prefHeight="555.0" prefWidth="850.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="belman.gui.controller.DepartmentWindowController">
 
     <stylesheets>
         <URL value="@stylesheet.css" />

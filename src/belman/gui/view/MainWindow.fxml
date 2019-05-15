@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="MainWindowPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="belman.gui.controller.MainWindowController">
+<AnchorPane id="AnchorPane" fx:id="MainWindowPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="850.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="belman.gui.controller.MainWindowController">
 
     <stylesheets>
         <URL value="@stylesheet.css" />
@@ -21,43 +21,43 @@
       <AnchorPane id="AnchorPane" layoutY="-108.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" styleClass="BelMan" stylesheets="@stylesheet.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <ToolBar prefHeight="40.0" prefWidth="641.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <GridPane fx:id="gridPaneOneToSix" layoutY="183.0" prefHeight="232.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <GridPane fx:id="gridPaneOneToSix" layoutY="163.0" prefHeight="245.0" prefWidth="850.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="370.0" minWidth="10.0" prefWidth="370.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="354.0" minWidth="10.0" prefWidth="340.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="612.0" minWidth="20.0" prefWidth="462.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="497.0" minWidth="10.0" prefWidth="388.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="183.0" minHeight="10.0" prefHeight="183.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="143.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="73.0" minHeight="0.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="221.0" minHeight="10.0" prefHeight="179.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="143.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="btnOne" minHeight="-Infinity" mnemonicParsing="false" onAction="#openHalfab" prefHeight="105.0" prefWidth="315.0" text="Halfab">
+                  <Button fx:id="btnThree" minHeight="-Infinity" mnemonicParsing="false" onAction="#openMontage1" prefHeight="105.0" prefWidth="486.0" text="Montage 1" GridPane.rowIndex="1">
                      <font>
                         <Font size="35.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnThree" minHeight="-Infinity" mnemonicParsing="false" onAction="#openMontage1" prefHeight="105.0" prefWidth="315.0" text="Montage 1" GridPane.rowIndex="1">
+                  <Button fx:id="btnFive" minHeight="-Infinity" mnemonicParsing="false" onAction="#openBertel" prefHeight="105.0" prefWidth="501.0" text="Bertel" GridPane.rowIndex="2">
                      <font>
                         <Font size="35.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnFive" minHeight="-Infinity" mnemonicParsing="false" onAction="#openBertel" prefHeight="105.0" prefWidth="315.0" text="Bertel" GridPane.rowIndex="2">
+                  <Button fx:id="btnTwo" minHeight="-Infinity" mnemonicParsing="false" onAction="#openBælg" prefHeight="105.0" prefWidth="453.0" text="Bælg" GridPane.columnIndex="1">
                      <font>
                         <Font size="35.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnTwo" minHeight="-Infinity" mnemonicParsing="false" onAction="#openBælg" prefHeight="105.0" prefWidth="285.0" text="Bælg" GridPane.columnIndex="1">
+                  <Button fx:id="btnFour" minHeight="-Infinity" mnemonicParsing="false" onAction="#openMontage2" prefHeight="105.0" prefWidth="453.0" text="Montage 2" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="35.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnFour" minHeight="-Infinity" mnemonicParsing="false" onAction="#openMontage2" prefHeight="105.0" prefWidth="285.0" text="Montage 2" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Button fx:id="btnSix" minHeight="-Infinity" mnemonicParsing="false" onAction="#openMaler" prefHeight="105.0" prefWidth="512.0" text="Maler" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font size="35.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnSix" minHeight="-Infinity" mnemonicParsing="false" onAction="#openMaler" prefHeight="105.0" prefWidth="285.0" text="Maler" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Button fx:id="btnOne" minHeight="-Infinity" mnemonicParsing="false" onAction="#openHalfab" prefHeight="105.0" prefWidth="469.0" text="Halfab">
                      <font>
                         <Font size="35.0" />
                      </font>
@@ -72,7 +72,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="btnSeven" mnemonicParsing="false" onAction="#openForsendelse" prefHeight="123.0" prefWidth="600.0" text="Forsendelse">
+                  <Button fx:id="btnSeven" mnemonicParsing="false" onAction="#openForsendelse" prefHeight="75.0" prefWidth="852.0" text="Forsendelse">
                      <font>
                         <Font size="35.0" />
                      </font>
@@ -84,16 +84,16 @@
                   <Font size="35.0" />
                </font>
             </Label>
-            <ImageView fitHeight="80.0" fitWidth="113.0" layoutX="14.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="80.0" fitWidth="113.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../belmanpic.PNG" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
-      <ToolBar layoutX="530.0" prefHeight="40.0" prefWidth="113.0" AnchorPane.leftAnchor="530.0" AnchorPane.rightAnchor="-43.0" AnchorPane.topAnchor="0.0">
+      <ToolBar layoutX="775.0" prefHeight="40.0" prefWidth="118.0" AnchorPane.leftAnchor="775.0" AnchorPane.rightAnchor="-43.0" AnchorPane.topAnchor="0.0">
          <items>
-            <Button fx:id="PrevBtn" mnemonicParsing="false" text="&lt;" />
+            <Button fx:id="PrevBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="&lt;" />
             <Button fx:id="NextBtn" mnemonicParsing="false" text="&gt;" />
          </items>
       </ToolBar>
