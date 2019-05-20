@@ -25,6 +25,7 @@ import java.util.logging.Logger;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import belman.bll.BLLManager;
 
 
 /**
@@ -46,6 +47,7 @@ public class DepartmentWindowController implements Initializable {
     private Label lblAfdeling;
     private int departmentId;
     private DepartmentOrderModel model = new DepartmentOrderModel();
+    private BLLManager bll = new BLLManager();
     @FXML
     private ProgressBar progressBar;
     @FXML
@@ -156,8 +158,7 @@ public class DepartmentWindowController implements Initializable {
     @FXML
     private void orderDone(ActionEvent event) 
     {
-        Thread th = new Thread((Runnable) new bg_Thread());
-        th.start();
+        bll.markAsDone(selectedDepartmentOrder.getOrderNumber(), departmentId);
     }
     
         @FXML public void clickOrder(MouseEvent click)

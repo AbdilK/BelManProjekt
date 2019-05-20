@@ -17,6 +17,8 @@ import java.util.List;
 import belman.bll.DBConnectionProvider;
 import belman.be.DepartmentOrder;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -98,5 +100,22 @@ public class OrderDAO {
         }
         
         return ready;
+    }
+    
+    public void markAsDone(int orderNumber, int departmentId) {
+        try (Connection con = db.getConnection()) {
+            PreparedStatement stmt;
+            stmt = con.prepareStatement(
+                    "UPDATE [Relations] SET Status = 1 WHERE OrderNumber = ? AND DepartmentId = ?;"
+                    );
+            stmt.setInt(1, orderNumber);
+            stmt.setInt(2, departmentId);
+            stmt.executeUpdate();
+            
+        } catch (SQLServerException ex) {
+            Logger.getLogger(OrderDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(OrderDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

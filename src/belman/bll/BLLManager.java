@@ -20,4 +20,8 @@ public class BLLManager
     public List<DepartmentOrder> getAllDepartmentOrders(int departmentId) throws SQLException {
         return dao.getAllDepartmentOrders(departmentId);
     }
+    
+    public void markAsDone(int orderNumber, int departmentNumber) {
+        dao.markAsDone(orderNumber, departmentNumber);
+    }
 }
