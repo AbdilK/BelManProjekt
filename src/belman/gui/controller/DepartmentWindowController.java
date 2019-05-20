@@ -19,10 +19,13 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import belman.be.DepartmentOrder;
-import belman.gui.controller.DepartmentOrderModel;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
+
 
 /**
  * FXML Controller class
@@ -30,7 +33,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
  * @author Qash
  */
 public class DepartmentWindowController implements Initializable {
-
+    
+    private DepartmentOrder selectedDepartmentOrder;
+    belman.be.DepartmentOrder DepartmentOrder = new  belman.be.DepartmentOrder();
     @FXML
     private Button PrevBtn;
     @FXML
@@ -100,6 +105,8 @@ public class DepartmentWindowController implements Initializable {
                         : item.booleanValue() ? "Ready" : "Delayed");
             }
         });
+        
+        progressBar.setProgress(0.0);
     }    
 
     @FXML
@@ -125,9 +132,49 @@ public class DepartmentWindowController implements Initializable {
         model.loadOrders(departmentId);
         tbvOrders.setItems(model.getOrders());
     }
-
+    class bg_Thread implements Runnable
+    {
+        @Override
+        public void run()
+        {
+            for(int i =0 ; i< 100 ; i++)
+            {
+             progressBar.setProgress(i / 100.0);
+                try 
+                {
+                    Thread.sleep(100);
+                } 
+                    catch (InterruptedException ex) 
+                    {
+                        Logger.getLogger(DepartmentWindowController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                
+            }
+        }
+    }  
+    
     @FXML
-    private void orderDone(ActionEvent event) {
+    private void orderDone(ActionEvent event) 
+    {
+        Thread th = new Thread((Runnable) new bg_Thread());
+        th.start();
     }
     
+        @FXML public void clickOrder(MouseEvent click)
+            //is used to quickly reload whenever needed. (Happens on Playlists)
+        {
+            {
+                               
+                selectedDepartmentOrder = tbvOrders.getSelectionModel().getSelectedItem();
+                lblOrderId.setText(Integer.toString(selectedDepartmentOrder.getOrderNumber()));
+                lblStatus.setText(Boolean.toString(selectedDepartmentOrder.isStatus()));
+                lblCurrentDep.setText(selectedDepartmentOrder.getCurrentDepartment());
+                java.util.Date utilDate1 = new java.util.Date(selectedDepartmentOrder.getDepartmentStart().getTime());
+                lblStartDate.setText(String.valueOf(utilDate1));
+                java.util.Date utilDate2 = new java.util.Date(selectedDepartmentOrder.getDepartmentEnd().getTime());
+                lblEndDate.setText(String.valueOf(utilDate2));
+                java.util.Date utilDate3 = new java.util.Date(selectedDepartmentOrder.getDepartmentEnd().getTime());
+                lblEndDate.setText(String.valueOf(utilDate3));
+            }
+         }
 }

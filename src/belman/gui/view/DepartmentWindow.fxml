@@ -19,7 +19,7 @@
       <AnchorPane id="AnchorPane" layoutY="-108.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="600.0" styleClass="BelMan" stylesheets="@stylesheet.css" AnchorPane.bottomAnchor="-35.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <ToolBar prefHeight="40.0" prefWidth="641.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <TableView fx:id="tbvOrders" layoutY="40.0" prefHeight="546.0" prefWidth="448.0">
+            <TableView fx:id="tbvOrders" layoutY="40.0" onMouseClicked="#clickOrder" prefHeight="546.0" prefWidth="448.0">
               <columns>
                   <TableColumn fx:id="tbcOrderNumber" minWidth="2.0" prefWidth="94.0" text="Ordrenummer" />
                   <TableColumn fx:id="tbcStatus" minWidth="2.0" prefWidth="76.0" text="Status" />
@@ -39,7 +39,7 @@
                   <Font size="27.0" />
                </font>
             </Label>
-            <Label fx:id="currentDepartmentLabel" layoutX="448.0" layoutY="134.0" text="Current Department = " textFill="WHITE">
+            <Label fx:id="currentDepartmentLabel" layoutX="447.0" layoutY="194.0" text="Current Department = " textFill="WHITE">
                <font>
                   <Font size="27.0" />
                </font>
@@ -64,37 +64,37 @@
                   <Font size="27.0" />
                </font>
             </Label>
-            <Label fx:id="lblOrderId" layoutX="730.0" layoutY="66.0" prefHeight="45.0" prefWidth="120.0" textFill="WHITE">
+            <Label fx:id="lblOrderId" layoutX="576.0" layoutY="66.0" prefHeight="45.0" prefWidth="120.0" textFill="WHITE">
                <font>
                   <Font size="30.0" />
                </font>
             </Label>
-            <Label fx:id="lblCurrentDep" layoutX="730.0" layoutY="131.0" prefHeight="45.0" prefWidth="120.0" textFill="WHITE">
+            <Label fx:id="lblCurrentDep" layoutX="711.0" layoutY="191.0" prefHeight="45.0" prefWidth="120.0" textFill="WHITE">
                <font>
                   <Font size="30.0" />
                </font>
             </Label>
-            <Label fx:id="lblStatus" layoutX="730.0" layoutY="189.0" prefHeight="45.0" prefWidth="120.0" textFill="WHITE">
+            <Label fx:id="lblStatus" layoutX="556.0" layoutY="123.0" prefHeight="45.0" prefWidth="120.0" textFill="WHITE">
                <font>
                   <Font size="30.0" />
                </font>
             </Label>
-            <Label fx:id="lblStartDate" layoutX="730.0" layoutY="252.0" prefHeight="45.0" prefWidth="120.0" textFill="WHITE">
+            <Label fx:id="lblStartDate" layoutX="591.0" layoutY="252.0" prefHeight="45.0" prefWidth="260.0" textFill="WHITE">
                <font>
                   <Font size="30.0" />
                </font>
             </Label>
-            <Label fx:id="lblEndDate" layoutX="730.0" layoutY="325.0" prefHeight="45.0" prefWidth="120.0" textFill="WHITE">
+            <Label fx:id="lblEndDate" layoutX="588.0" layoutY="325.0" prefHeight="45.0" prefWidth="260.0" textFill="WHITE">
                <font>
                   <Font size="30.0" />
                </font>
             </Label>
-            <Label layoutX="447.0" layoutY="189.0" prefHeight="45.0" prefWidth="120.0" text="Status = " textFill="WHITE">
+            <Label layoutX="446.0" layoutY="123.0" prefHeight="45.0" prefWidth="120.0" text="Status = " textFill="WHITE">
                <font>
                   <Font size="30.0" />
                </font>
             </Label>
-            <Label fx:id="lblShippingDate" layoutX="730.0" layoutY="396.0" prefHeight="45.0" prefWidth="120.0" textFill="WHITE">
+            <Label fx:id="lblShippingDate" layoutX="648.0" layoutY="394.0" prefHeight="45.0" prefWidth="203.0" textFill="WHITE">
                <font>
                   <Font size="30.0" />
                </font>
