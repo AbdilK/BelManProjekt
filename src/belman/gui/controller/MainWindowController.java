@@ -100,7 +100,7 @@ public class MainWindowController implements Initializable {
         Parent root = fxmlLoader.load();
         belman.gui.controller.DepartmentWindowController nextController = fxmlLoader.getController();
         nextController.setLblAfdeling("Bælg");
-        nextController.setDepartmentId("Bælg");
+        nextController.setDepartmentId("BÃ¦lg");
         nextController.getOrders();
         MainWindowPane.getChildren().setAll(root);
     }
