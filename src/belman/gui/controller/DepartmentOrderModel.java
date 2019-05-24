@@ -23,9 +23,9 @@ public class DepartmentOrderModel {
         return orders;
     }
     
-    public void loadOrders(int departmentId) throws SQLException
+    public void loadOrders(String departmentName) throws SQLException
     {
-        List<DepartmentOrder> loadedOrders = bllManager.getAllDepartmentOrders(departmentId);
+        List<DepartmentOrder> loadedOrders = bllManager.getAllDepartmentOrders(departmentName);
         
         orders.clear();
         orders.addAll(loadedOrders);

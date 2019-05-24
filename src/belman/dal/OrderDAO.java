@@ -28,32 +28,27 @@ public class OrderDAO {
     
     private DBConnectionProvider db = new DBConnectionProvider();
     
-    public List<DepartmentOrder> getAllDepartmentOrders(int departmentId) throws SQLException {
+    public List<DepartmentOrder> getAllDepartmentOrders(String departmentName) throws SQLException {
         List<DepartmentOrder> listOrders = new ArrayList<>();
         try (Connection con = db.getConnection()) {
             PreparedStatement stmt;
             stmt = con.prepareStatement(
-                    "select [Order].OrderNumber, [Order].CurrentDepartment, [Relations].DepartmentStart, " + 
-                    "[Relations].DepartmentEnd, [Relations].LastDepartment from [Order] join [Relations] " +
-                    "on [Order].OrderNumber=[Relations].OrderNumber where [Relations].DepartmentId=? " +
-                    "and [Relations].DepartmentStart <= (convert(date, getdate()));"
+                    "SELECT [ProdOrder].OrderNumber, [DepTask].TaskStatus, [ProdOrder].CurrentDepartment, [DepTask].StartDate, [DepTask].EndDate, [DepTask].LastDepartment, [DepTask].ProductionID " + 
+                    "FROM ProdOrder JOIN DepTask " +
+                    "ON [ProdOrder].id = [DepTask].DepartmentID " +
+                    "WHERE [DepTask]. DepartmentName= ? " +
+                    "AND [DepTask].StartDate <= (convert(date, getdate()))"
                     );
-            stmt.setInt(1, departmentId);
+            stmt.setString(1, departmentName);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 DepartmentOrder order = new DepartmentOrder();
-                order.setOrderNumber(rs.getInt("OrderNumber"));
-                order.setDepartmentStart(rs.getDate("DepartmentStart"));
-                order.setDepartmentEnd(rs.getDate("DepartmentEnd"));
-                order.setCurrentDepartment(getDepartmentName(rs.getInt("CurrentDepartment")));
-                order.setStatus(getIsReady(rs.getInt("OrderNumber"), rs.getInt("LastDepartment")));
-                int lastId = rs.getInt("LastDepartment");
-                if(lastId > 0) {
-                    order.setLastDepartment(getDepartmentName(lastId));
-                }
-                else {
-                    order.setLastDepartment("ingen");
-                }
+                order.setOrderNumber(rs.getString("OrderNumber"));
+                order.setDepartmentStart(rs.getDate("StartDate"));
+                order.setDepartmentEnd(rs.getDate("EndDate"));
+                order.setCurrentDepartment(rs.getString("CurrentDepartment"));
+                order.setLastDepartment(rs.getString("LastDepartment"));
+                order.setProductionId(rs.getInt("ProductionID"));
                 listOrders.add(order);
             }
         } catch (SQLException ex) {

@@ -13,18 +13,19 @@ import java.sql.Date;
  */
 public class DepartmentOrder {
     
-    private int orderNumber;
+    private String orderNumber;
     private String currentDepartment;
     private Date departmentStart;
     private Date departmentEnd;
     private String lastDepartment;
     private boolean status;
+    private int productionId;
     
-    public int getOrderNumber() {
+    public String getOrderNumber() {
         return orderNumber;
     }
     
-    public void setOrderNumber(int orderNumber) {
+    public void setOrderNumber(String orderNumber) {
         this.orderNumber = orderNumber;
     }
     
@@ -66,5 +67,13 @@ public class DepartmentOrder {
     
     public void setStatus(boolean status) {
         this.status = status;
+    }
+    
+    public int getProductionId() {
+        return productionId;
+    }
+    
+    public void setProductionId(int productionId) {
+        this.productionId = productionId;
     }
 }

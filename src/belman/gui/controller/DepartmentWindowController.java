@@ -45,7 +45,7 @@ public class DepartmentWindowController implements Initializable {
     private AnchorPane bertelPane;
     @FXML
     private Label lblAfdeling;
-    private int departmentId;
+    private String departmentName;
     private DepartmentOrderModel model = new DepartmentOrderModel();
     private BLLManager bll = new BLLManager();
     @FXML
@@ -126,12 +126,12 @@ public class DepartmentWindowController implements Initializable {
         lblAfdeling.setText("Afdeling: " + department);
     }
     
-    public void setDepartmentId(int id){
-        departmentId=id;
+    public void setDepartmentId(String name){
+        departmentName=name;
     }
     
     public void getOrders() throws SQLException {
-        model.loadOrders(departmentId);
+        model.loadOrders(departmentName);
         tbvOrders.setItems(model.getOrders());
     }
     class bg_Thread implements Runnable
@@ -158,7 +158,7 @@ public class DepartmentWindowController implements Initializable {
     @FXML
     private void orderDone(ActionEvent event) 
     {
-        bll.markAsDone(selectedDepartmentOrder.getOrderNumber(), departmentId);
+        //bll.markAsDone(selectedDepartmentOrder.getOrderNumber(), departmentName);
     }
     
         @FXML public void clickOrder(MouseEvent click)
@@ -167,7 +167,7 @@ public class DepartmentWindowController implements Initializable {
             {
                                
                 selectedDepartmentOrder = tbvOrders.getSelectionModel().getSelectedItem();
-                lblOrderId.setText(Integer.toString(selectedDepartmentOrder.getOrderNumber()));
+                lblOrderId.setText(selectedDepartmentOrder.getOrderNumber());
                 lblStatus.setText(Boolean.toString(selectedDepartmentOrder.isStatus()));
                 lblCurrentDep.setText(selectedDepartmentOrder.getCurrentDepartment());
                 java.util.Date utilDate1 = new java.util.Date(selectedDepartmentOrder.getDepartmentStart().getTime());

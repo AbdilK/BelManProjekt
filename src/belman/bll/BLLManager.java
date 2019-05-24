@@ -17,8 +17,8 @@ public class BLLManager
 {
     private OrderDAO dao = new OrderDAO();
     
-    public List<DepartmentOrder> getAllDepartmentOrders(int departmentId) throws SQLException {
-        return dao.getAllDepartmentOrders(departmentId);
+    public List<DepartmentOrder> getAllDepartmentOrders(String departmentName) throws SQLException {
+        return dao.getAllDepartmentOrders(departmentName);
     }
     
     public void markAsDone(int orderNumber, int departmentNumber) {

@@ -62,8 +62,8 @@ public class MainWindowController implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/belman/gui/view/DepartmentWindow.fxml"));
         Parent root = fxmlLoader.load();
         belman.gui.controller.DepartmentWindowController nextController = fxmlLoader.getController();
-        nextController.setLblAfdeling("Halfab");
-        nextController.setDepartmentId(1);
+        nextController.setLblAfdeling("Halvfab");
+        nextController.setDepartmentId("Halvfab");
         nextController.getOrders();
         MainWindowPane.getChildren().setAll(root);
         // den vil ikke dur, dog vil de andre
@@ -75,8 +75,8 @@ public class MainWindowController implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/belman/gui/view/DepartmentWindow.fxml"));
         Parent root = fxmlLoader.load();
         belman.gui.controller.DepartmentWindowController nextController = fxmlLoader.getController();
-        nextController.setLblAfdeling("Montage1");
-        nextController.setDepartmentId(3);
+        nextController.setLblAfdeling("Montage 1");
+        nextController.setDepartmentId("Montage 1");
         nextController.getOrders();
         MainWindowPane.getChildren().setAll(root);
     }
@@ -88,7 +88,7 @@ public class MainWindowController implements Initializable {
         Parent root = fxmlLoader.load();
         belman.gui.controller.DepartmentWindowController nextController = fxmlLoader.getController();
         nextController.setLblAfdeling("Bertel");
-        nextController.setDepartmentId(5);
+        nextController.setDepartmentId("Bertel");
         nextController.getOrders();
         MainWindowPane.getChildren().setAll(root);
     }
@@ -100,7 +100,7 @@ public class MainWindowController implements Initializable {
         Parent root = fxmlLoader.load();
         belman.gui.controller.DepartmentWindowController nextController = fxmlLoader.getController();
         nextController.setLblAfdeling("Bælg");
-        nextController.setDepartmentId(2);
+        nextController.setDepartmentId("Bælg");
         nextController.getOrders();
         MainWindowPane.getChildren().setAll(root);
     }
@@ -111,8 +111,8 @@ public class MainWindowController implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/belman/gui/view/DepartmentWindow.fxml"));
         Parent root = fxmlLoader.load();
         belman.gui.controller.DepartmentWindowController nextController = fxmlLoader.getController();
-        nextController.setLblAfdeling("Montage2");
-        nextController.setDepartmentId(4);
+        nextController.setLblAfdeling("Montage 2");
+        nextController.setDepartmentId("Montage 2");
         nextController.getOrders();
         MainWindowPane.getChildren().setAll(root);
     }
@@ -124,7 +124,7 @@ public class MainWindowController implements Initializable {
         Parent root = fxmlLoader.load();
         belman.gui.controller.DepartmentWindowController nextController = fxmlLoader.getController();
         nextController.setLblAfdeling("Maler");
-        nextController.setDepartmentId(6);
+        nextController.setDepartmentId("Maler");
         nextController.getOrders();
         MainWindowPane.getChildren().setAll(root);
     }
@@ -136,7 +136,7 @@ public class MainWindowController implements Initializable {
         Parent root = fxmlLoader.load();
         belman.gui.controller.DepartmentWindowController nextController = fxmlLoader.getController();
         nextController.setLblAfdeling("Forsendelse");
-        nextController.setDepartmentId(7);
+        nextController.setDepartmentId("Forsendelse");
         nextController.getOrders();
         MainWindowPane.getChildren().setAll(root);
     }
