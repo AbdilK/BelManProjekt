@@ -21,7 +21,7 @@ public class BLLManager
         return dao.getAllDepartmentOrders(departmentName);
     }
     
-    public void markAsDone(int orderNumber, int departmentNumber) {
-        dao.markAsDone(orderNumber, departmentNumber);
+    public void markAsDone(int productionID, String departmentName) {
+        dao.markAsDone(productionID, departmentName);
     }
 }

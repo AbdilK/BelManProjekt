@@ -158,7 +158,7 @@ public class DepartmentWindowController implements Initializable {
     @FXML
     private void orderDone(ActionEvent event) 
     {
-        //bll.markAsDone(selectedDepartmentOrder.getOrderNumber(), departmentName);
+        bll.markAsDone(selectedDepartmentOrder.getProductionId(), departmentName);
     }
     
         @FXML public void clickOrder(MouseEvent click)

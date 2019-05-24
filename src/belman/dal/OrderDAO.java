@@ -97,14 +97,14 @@ public class OrderDAO {
         return ready;
     }
     
-    public void markAsDone(int orderNumber, int departmentId) {
+    public void markAsDone(int productionID, String departmentName) {
         try (Connection con = db.getConnection()) {
             PreparedStatement stmt;
             stmt = con.prepareStatement(
-                    "UPDATE [Relations] SET Status = 1 WHERE OrderNumber = ? AND DepartmentId = ?;"
+                    "UPDATE [DepTask] SET TaskStatus = 1 WHERE ProductionID = ? AND DepartmentName = ?;"
                     );
-            stmt.setInt(1, orderNumber);
-            stmt.setInt(2, departmentId);
+            stmt.setInt(1, productionID);
+            stmt.setString(2, departmentName);
             stmt.executeUpdate();
             
         } catch (SQLServerException ex) {
