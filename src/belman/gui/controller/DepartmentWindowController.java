@@ -27,6 +27,7 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import belman.bll.BLLManager;
+import belman.be.DepartmentOrder;
 
 
 /**
@@ -171,6 +172,17 @@ public class DepartmentWindowController implements Initializable {
                 selectedDepartmentOrder = tbvOrders.getSelectionModel().getSelectedItem();
                 lblOrderId.setText(selectedDepartmentOrder.getOrderNumber());
                 lblStatus.setText(Boolean.toString(selectedDepartmentOrder.isStatus()));
+                boolean isStatus = false;
+                
+                if (isStatus == true)
+                {
+                lblStatus.setText("Done");
+                }
+                else {
+                
+                lblStatus.setText("Delayed");        
+                
+                }
                 lblCurrentDep.setText(selectedDepartmentOrder.getCurrentDepartment());
                 java.util.Date utilDate1 = new java.util.Date(selectedDepartmentOrder.getDepartmentStart().getTime());
                 lblStartDate.setText(String.valueOf(utilDate1));
