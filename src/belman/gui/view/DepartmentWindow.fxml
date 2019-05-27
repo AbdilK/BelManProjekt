@@ -34,12 +34,12 @@
                </font>
             </Label>
             <ProgressBar fx:id="progressBar" layoutX="448.0" layoutY="554.0" prefHeight="32.0" prefWidth="399.0" progress="0.0" />
-            <Label fx:id="orderIdLabel" layoutX="458.0" layoutY="131.0" prefHeight="39.0" prefWidth="171.0" text="Order Id |" textFill="WHITE">
+            <Label fx:id="orderIdLabel" layoutX="461.0" layoutY="131.0" prefHeight="39.0" prefWidth="168.0" text="Order Id |" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="currentDepartmentLabel" layoutX="461.0" layoutY="226.0" prefHeight="21.0" prefWidth="157.0" text="Current Department | " textFill="WHITE">
+            <Label fx:id="currentDepartmentLabel" layoutX="463.0" layoutY="226.0" prefHeight="21.0" prefWidth="231.0" text="Current Department | " textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
@@ -89,7 +89,7 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="458.0" layoutY="170.0" prefHeight="45.0" prefWidth="188.0" text="Status | " textFill="WHITE">
+            <Label layoutX="461.0" layoutY="170.0" prefHeight="45.0" prefWidth="88.0" text="Status | " textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
