@@ -64,7 +64,7 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="lblOrderId" layoutX="532.0" layoutY="128.0" prefHeight="45.0" prefWidth="215.0" textFill="WHITE">
+            <Label fx:id="lblOrderId" layoutX="532.0" layoutY="128.0" prefHeight="45.0" prefWidth="287.0" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
@@ -74,17 +74,17 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="lblStatus" layoutX="515.0" layoutY="170.0" prefHeight="45.0" prefWidth="287.0" textFill="WHITE">
+            <Label fx:id="lblStatus" layoutX="515.0" layoutY="170.0" prefHeight="45.0" prefWidth="310.0" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="lblStartDate" layoutX="552.0" layoutY="252.0" prefHeight="45.0" prefWidth="260.0" textFill="WHITE">
+            <Label fx:id="lblStartDate" layoutX="543.0" layoutY="252.0" prefHeight="45.0" prefWidth="269.0" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="lblEndDate" layoutX="542.0" layoutY="294.0" prefHeight="45.0" prefWidth="260.0" textFill="WHITE">
+            <Label fx:id="lblEndDate" layoutX="533.0" layoutY="294.0" prefHeight="45.0" prefWidth="269.0" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
