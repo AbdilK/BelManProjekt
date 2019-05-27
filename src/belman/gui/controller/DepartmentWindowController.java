@@ -160,6 +160,7 @@ public class DepartmentWindowController implements Initializable {
     private void orderDone(ActionEvent event) 
     {
         bll.markAsDone(selectedDepartmentOrder.getProductionId(), departmentName);
+        System.out.println("Order number: " + selectedDepartmentOrder.getOrderNumber() + " has been marked as done");
     }
     
         @FXML public void clickOrder(MouseEvent click)
@@ -177,6 +178,8 @@ public class DepartmentWindowController implements Initializable {
                 lblEndDate.setText(String.valueOf(utilDate2));
                 java.util.Date utilDate3 = new java.util.Date(selectedDepartmentOrder.getDepartmentEnd().getTime());
                 lblEndDate.setText(String.valueOf(utilDate3));
+                
+                
             }
          }
 }
