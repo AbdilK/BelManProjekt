@@ -54,11 +54,6 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="shippingDateLabel" layoutX="461.0" layoutY="351.0" prefHeight="21.0" prefWidth="157.0" text="Shipping Date | " textFill="WHITE">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Label>
             <Label fx:id="progressLabel" layoutX="457.0" layoutY="515.0" text="Progress" textFill="WHITE">
                <font>
                   <Font size="15.0" />
@@ -90,11 +85,6 @@
                </font>
             </Label>
             <Label layoutX="461.0" layoutY="170.0" prefHeight="45.0" prefWidth="88.0" text="Status | " textFill="WHITE">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Label>
-            <Label fx:id="lblShippingDate" layoutX="570.0" layoutY="339.0" prefHeight="45.0" prefWidth="203.0" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
