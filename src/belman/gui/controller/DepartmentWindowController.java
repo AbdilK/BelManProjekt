@@ -170,12 +170,11 @@ public class DepartmentWindowController implements Initializable {
                                
                 selectedDepartmentOrder = tbvOrders.getSelectionModel().getSelectedItem();
                 lblOrderId.setText(selectedDepartmentOrder.getOrderNumber());
-                lblStatus.setText(Boolean.toString(selectedDepartmentOrder.isStatus()));
-                boolean isStatus = false;
+                //lblStatus.setText(Boolean.toString(selectedDepartmentOrder.isStatus()));
                 
-                if (isStatus == true)
+                if (selectedDepartmentOrder.isStatus() == true)
                 {
-                lblStatus.setText("Done");
+                lblStatus.setText("Ready");
                 }
                 else {
                 
