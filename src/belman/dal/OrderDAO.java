@@ -17,6 +17,7 @@ import java.util.List;
 import belman.bll.DBConnectionProvider;
 import belman.be.DepartmentOrder;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
+import java.sql.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -36,8 +37,9 @@ public class OrderDAO {
                     "SELECT [ProdOrder].OrderNumber, [DepTask].TaskStatus, [ProdOrder].CurrentDepartment, [DepTask].StartDate, [DepTask].EndDate, [DepTask].LastDepartment, [DepTask].ProductionID " + 
                     "FROM ProdOrder JOIN DepTask " +
                     "ON [ProdOrder].id = [DepTask].DepartmentID " +
-                    "WHERE [DepTask]. DepartmentName= ? " +
-                    "AND [DepTask].StartDate <= (convert(date, getdate()))"
+                    "WHERE [DepTask]. DepartmentName = ? " +
+                    "AND [DepTask].StartDate <= (convert(date, getdate())) " +
+                    "AND [DepTask].TaskStatus = 0"
                     );
             stmt.setString(1, departmentName);
             ResultSet rs = stmt.executeQuery();
@@ -49,6 +51,12 @@ public class OrderDAO {
                 order.setCurrentDepartment(rs.getString("CurrentDepartment"));
                 order.setLastDepartment(rs.getString("LastDepartment"));
                 order.setProductionId(rs.getInt("ProductionID"));
+                if("Halvfab".equals(departmentName)) {
+                    order.setStatus(true);
+                }
+                else {
+                    order.setStatus(getStatus(rs.getInt("ProductionID"), rs.getDate("StartDate")));
+                }
                 listOrders.add(order);
             }
         } catch (SQLException ex) {
@@ -57,18 +65,20 @@ public class OrderDAO {
         return listOrders;
     }
     
-    public String getDepartmentName(int departmentId) throws SQLException {
+    public String getDepartmentName(int productionID, Date endDate) throws SQLException {
         String departmentName = "fejl";
-        try (Connection con = db.getConnection()) {
-            PreparedStatement stmt;
-            stmt = con.prepareStatement(
-                    "select * from [Department] where DepartmentID = ?"
-                    );
-            stmt.setInt(1, departmentId);
-            ResultSet rs = stmt.executeQuery();
-            while (rs.next()) {
+        try (Connection con = db.getConnection())
+        {
+            PreparedStatement ppst1 = con.prepareStatement("SELECT DepartmentName FROM DepTask WHERE ProductionID = ? AND EndDate = ?");
+            
+            ppst1.setInt(1, productionID);
+            ppst1.setDate(2, endDate);
+            
+            ResultSet rs = ppst1.executeQuery();
+            while(rs.next()) {
                 departmentName = rs.getString("DepartmentName");
             }
+            
         }
         
         return departmentName;
@@ -105,6 +115,44 @@ public class OrderDAO {
                     );
             stmt.setInt(1, productionID);
             stmt.setString(2, departmentName);
+            stmt.executeUpdate();
+            
+        } catch (SQLServerException ex) {
+            Logger.getLogger(OrderDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(OrderDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public boolean getStatus(int id, java.sql.Date startDate) throws SQLException {
+        
+        boolean status = false;
+        try (Connection con = db.getConnection())
+        {
+            PreparedStatement ppst1 = con.prepareStatement("SELECT TaskStatus FROM DepTask WHERE ProductionID = ? AND EndDate = ?");
+            
+            ppst1.setInt(1, id);
+            ppst1.setDate(2, startDate);
+            
+            ResultSet rs = ppst1.executeQuery();
+            while(rs.next()) {
+                status = rs.getBoolean("TaskStatus");
+            }
+            
+        }
+        
+        return status;
+    }
+    
+    public void setCurrentDepartment(int productionID, String departmentName, Date endDate) {
+        try (Connection con = db.getConnection()) {
+            PreparedStatement stmt;
+            stmt = con.prepareStatement(
+                    "UPDATE [ProdOrder] SET CurrentDepartment = ? WHERE ProductionID = ? AND DepartmentName = ?;"
+                    );
+            stmt.setString(1, getDepartmentName(productionID, endDate));
+            stmt.setInt(2, productionID);
+            stmt.setString(3, departmentName);
             stmt.executeUpdate();
             
         } catch (SQLServerException ex) {
