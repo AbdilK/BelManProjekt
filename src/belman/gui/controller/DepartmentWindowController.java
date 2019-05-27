@@ -5,6 +5,7 @@
  */
 package belman.gui.controller;
 
+import belman.gui.model.DepartmentOrderModel;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package belman.gui.controller;
+package belman.gui.model;
 
 import belman.bll.BLLManager;
 import belman.be.DepartmentOrder;

@@ -57,7 +57,7 @@
                         <Font size="35.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnOne" minHeight="-Infinity" mnemonicParsing="false" onAction="#openHalfab" prefHeight="105.0" prefWidth="469.0" text="Halfab">
+                  <Button fx:id="btnOne" minHeight="-Infinity" mnemonicParsing="false" onAction="#openHalfab" prefHeight="105.0" prefWidth="469.0" text="Halvfab">
                      <font>
                         <Font size="35.0" />
                      </font>
