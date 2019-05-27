@@ -175,11 +175,11 @@ public class DepartmentWindowController implements Initializable {
                 
                 if (isStatus == true)
                 {
-                lblStatus.setText(("Done"));
+                lblStatus.setText("Done");
                 }
                 else {
                 
-                lblStatus.setText(("Delayed"));        
+                lblStatus.setText("Delayed");        
                 
                 }
                 lblCurrentDep.setText(selectedDepartmentOrder.getCurrentDepartment());
