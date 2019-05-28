@@ -28,6 +28,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import belman.bll.BLLManager;
 import belman.be.DepartmentOrder;
+import javax.swing.JOptionPane;
+import belman.gui.controller.DepartmentWindowController;
 
 
 /**
@@ -160,8 +162,23 @@ public class DepartmentWindowController implements Initializable {
     @FXML
     private void orderDone(ActionEvent event) 
     {
+        
+        int svar = JOptionPane.showConfirmDialog(null, "Er du sikker på, at du vil udføre denne handling?", "Sikkerhedsbox", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if (svar == JOptionPane.YES_OPTION)
+        {
         bll.markAsDone(selectedDepartmentOrder.getProductionId(), departmentName);
-        System.out.println("Order number: " + selectedDepartmentOrder.getOrderNumber() + " has been marked as done");
+        System.out.println("Ordrenummeret: " + selectedDepartmentOrder.getOrderNumber() + " er markeret som færdig og er sendt videre til næste afdeling");
+        }
+        
+        else if (svar == JOptionPane.NO_OPTION)
+        {
+            System.out.println("Handlingen er blevet annulleret"); 
+        }
+        else if (svar == JOptionPane.CLOSED_OPTION)
+        {
+            System.out.println("Handlingen er blevet annulleret"); 
+        }
     }
     
         @FXML public void clickOrder(MouseEvent click)
