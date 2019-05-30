@@ -25,37 +25,37 @@
          <children>
             <GridPane fx:id="gridPaneOneToSix" layoutX="1.0" layoutY="157.0" prefHeight="614.0" prefWidth="889.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
-                  <Button fx:id="btnThree" mnemonicParsing="false" onAction="#openMontage1" prefHeight="100.0" prefWidth="3000.0" text="Montage 1" GridPane.rowIndex="2">
+                  <Button fx:id="btnThree" mnemonicParsing="false" onAction="#openMontage1" prefHeight="500.0" prefWidth="3000.0" text="Montage 1" GridPane.rowIndex="2">
                      <font>
                         <Font size="35.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnFive" mnemonicParsing="false" onAction="#openBertel" prefHeight="100.0" prefWidth="3000.0" text="Bertel" GridPane.rowIndex="4">
+                  <Button fx:id="btnFive" mnemonicParsing="false" onAction="#openBertel" prefHeight="500.0" prefWidth="3000.0" text="Bertel" GridPane.rowIndex="4">
                      <font>
                         <Font size="35.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnTwo" mnemonicParsing="false" onAction="#openBælg" prefHeight="100.0" prefWidth="3000.0" text="Bælg" GridPane.rowIndex="1">
+                  <Button fx:id="btnTwo" mnemonicParsing="false" onAction="#openBælg" prefHeight="500.0" prefWidth="3000.0" text="Bælg" GridPane.rowIndex="1">
                      <font>
                         <Font size="35.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnFour" mnemonicParsing="false" onAction="#openMontage2" prefHeight="100.0" prefWidth="3000.0" text="Montage 2" GridPane.rowIndex="3">
+                  <Button fx:id="btnFour" mnemonicParsing="false" onAction="#openMontage2" prefHeight="500.0" prefWidth="3000.0" text="Montage 2" GridPane.rowIndex="3">
                      <font>
                         <Font size="35.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnSix" mnemonicParsing="false" onAction="#openMaler" prefHeight="100.0" prefWidth="3000.0" text="Maler" GridPane.rowIndex="5">
+                  <Button fx:id="btnSix" mnemonicParsing="false" onAction="#openMaler" prefHeight="500.0" prefWidth="3000.0" text="Maler" GridPane.rowIndex="5">
                      <font>
                         <Font size="35.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnOne" mnemonicParsing="false" onAction="#openHalfab" prefHeight="100.0" prefWidth="3000.0" text="Halvfab">
+                  <Button fx:id="btnOne" mnemonicParsing="false" onAction="#openHalfab" prefHeight="500.0" prefWidth="3000.0" text="Halvfab">
                      <font>
                         <Font size="35.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnSeven" mnemonicParsing="false" onAction="#openForsendelse" prefHeight="100.0" prefWidth="3000.0" text="Forsendelse" GridPane.rowIndex="6">
+                  <Button fx:id="btnSeven" mnemonicParsing="false" onAction="#openForsendelse" prefHeight="500.0" prefWidth="3000.0" text="Forsendelse" GridPane.rowIndex="6">
                      <font>
                         <Font size="35.0" />
                      </font>
