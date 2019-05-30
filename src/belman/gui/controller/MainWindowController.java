@@ -127,6 +127,7 @@ public class MainWindowController implements Initializable {
         nextController.setDepartmentId("Maler");
         nextController.getOrders();
         MainWindowPane.getChildren().setAll(root);
+        
     }
 
     @FXML

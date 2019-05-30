@@ -16,34 +16,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="bertelPane" prefHeight="555.0" prefWidth="1150.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="belman.gui.controller.DepartmentWindowController">
-
-    <stylesheets>
-        <URL value="@stylesheet.css" />
-    </stylesheets>
-   <children>
-      <AnchorPane id="AnchorPane" layoutY="-108.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="600.0" styleClass="BelMan" stylesheets="@stylesheet.css" AnchorPane.bottomAnchor="-35.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<BorderPane prefHeight="562.0" prefWidth="1157.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="belman.gui.controller.DepartmentWindowController">
+   <bottom>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1706.0" prefWidth="2000.0" styleClass="BelMan" stylesheets="@stylesheet.css" BorderPane.alignment="CENTER">
          <children>
-            <GridPane layoutX="613.0" layoutY="50.0" prefHeight="491.0" prefWidth="497.0" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="50.0">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="295.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="0.0" prefWidth="0.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
+            <GridPane layoutX="615.0" layoutY="26.0" prefHeight="681.0" prefWidth="556.0" AnchorPane.topAnchor="26.0">
                <children>
-                  <Label fx:id="lblAfdeling" text="Afdeling:" textFill="WHITE">
+                  <Label fx:id="lblAfdeling" prefHeight="54.0" prefWidth="272.0" text="Afdeling:" textFill="WHITE">
                      <font>
-                        <Font name="System Bold" size="37.0" />
+                        <Font name="System Bold" size="25.0" />
                      </font>
                   </Label>
                   <Label fx:id="orderIdLabel" prefHeight="39.0" prefWidth="304.0" text="Order Id |" textFill="WHITE" GridPane.rowIndex="1">
@@ -71,8 +52,8 @@
                         <Font size="25.0" />
                      </font>
                   </Label>
-                  <Button fx:id="markAsDoneButton" mnemonicParsing="false" onAction="#orderDone" prefHeight="59.0" prefWidth="999.0" text="Mark as done" GridPane.rowIndex="6" />
-                  <Label fx:id="progressLabel" text="Progress" textFill="WHITE" GridPane.rowIndex="7">
+                  <Button fx:id="markAsDoneButton" mnemonicParsing="false" prefHeight="59.0" prefWidth="999.0" text="Mark as done" GridPane.rowIndex="6" />
+                  <Label fx:id="progressLabel" prefHeight="36.0" prefWidth="396.0" text="Progress" textFill="WHITE" GridPane.rowIndex="7">
                      <font>
                         <Font size="25.0" />
                      </font>
@@ -80,48 +61,68 @@
                   <ProgressBar fx:id="progressBar" prefHeight="32.0" prefWidth="500.0" progress="0.0" GridPane.rowIndex="8" />
                   <Label fx:id="lblOrderId" prefHeight="45.0" prefWidth="287.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
-                        <Font size="15.0" />
+                        <Font size="25.0" />
                      </font>
                   </Label>
                   <Label fx:id="lblCurrentDep" prefHeight="45.0" prefWidth="215.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <font>
-                        <Font size="15.0" />
+                        <Font size="25.0" />
                      </font>
                   </Label>
                   <Label fx:id="lblStatus" prefHeight="45.0" prefWidth="310.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
-                        <Font size="15.0" />
+                        <Font size="25.0" />
                      </font>
                   </Label>
                   <Label fx:id="lblStartDate" prefHeight="45.0" prefWidth="269.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <font>
-                        <Font size="15.0" />
+                        <Font size="25.0" />
                      </font>
                   </Label>
                   <Label fx:id="lblEndDate" prefHeight="45.0" prefWidth="269.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5">
                      <font>
-                        <Font size="15.0" />
+                        <Font size="25.0" />
                      </font>
                   </Label>
                </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="301.0" minWidth="10.0" prefWidth="301.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="301.0" minWidth="0.0" prefWidth="256.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
             </GridPane>
-            <ToolBar prefHeight="40.0" prefWidth="641.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <TableView fx:id="tbvOrders" layoutY="40.0" onMouseClicked="#clickOrder" prefHeight="550.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="40.0">
-              <columns>
+            <TableView fx:id="tbvOrders" layoutY="1.0" minHeight="-Infinity" onMouseClicked="#clickOrder" prefHeight="2000.0" prefWidth="600.0" AnchorPane.bottomAnchor="-164.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columns>
                   <TableColumn fx:id="tbcOrderNumber" minWidth="2.0" prefWidth="94.0" text="Ordrenummer" />
                   <TableColumn fx:id="tbcStatus" minWidth="2.0" prefWidth="93.0" text="Status" />
-                <TableColumn fx:id="tbcAfdeling" prefWidth="151.0" text="Nuværende afdeling" />
-                <TableColumn fx:id="tbcStartDato" minWidth="2.0" prefWidth="126.0" text="Start dato" />
+                  <TableColumn fx:id="tbcAfdeling" prefWidth="151.0" text="Nuværende afdeling" />
+                  <TableColumn fx:id="tbcStartDato" minWidth="2.0" prefWidth="126.0" text="Start dato" />
                   <TableColumn fx:id="tbcSlutDato" minWidth="2.0" prefWidth="125.0" text="Slut dato" />
-              </columns>
+               </columns>
             </TableView>
          </children>
       </AnchorPane>
-      <ToolBar layoutX="781.0" prefHeight="40.0" prefWidth="112.0" AnchorPane.rightAnchor="-43.0" AnchorPane.topAnchor="0.0">
+   </bottom>
+   <center>
+      <ToolBar prefHeight="50.0" prefWidth="1247.0" BorderPane.alignment="CENTER">
          <items>
-            <Button fx:id="PrevBtn" mnemonicParsing="false" onAction="#PreviousPage" text="&lt;" />
-            <Button fx:id="NextBtn" mnemonicParsing="false" onAction="#NextPage" text="&gt;" />
+            <ToolBar prefHeight="40.0" prefWidth="72.0">
+               <items>
+                  <Button fx:id="PrevBtn" mnemonicParsing="false" onAction="#PreviousPage" text="&lt;" />
+                  <Button fx:id="NextBtn" mnemonicParsing="false" onAction="#NextPage" text="&gt;" />
+               </items>
+            </ToolBar>
          </items>
       </ToolBar>
-   </children>
-</AnchorPane>
+   </center>
+</BorderPane>

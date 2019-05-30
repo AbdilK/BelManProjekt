@@ -19,9 +19,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="borderPane" prefHeight="860.0" prefWidth="889.0" styleClass="BelMan" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="belman.gui.controller.MainWindowController">
+<BorderPane fx:id="borderPane" prefHeight="555.0" prefWidth="1150.0" styleClass="BelMan" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="belman.gui.controller.MainWindowController">
    <top>
-      <AnchorPane fx:id="MainWindowPane" prefHeight="100.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="MainWindowPane" prefHeight="100.0" prefWidth="1150.0" BorderPane.alignment="CENTER">
          <children>
             <GridPane fx:id="gridPaneOneToSix" layoutY="204.0" prefHeight="525.0" prefWidth="889.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="204.0">
                <children>

@@ -182,7 +182,6 @@ public class DepartmentWindowController implements Initializable {
     }
     
         @FXML public void clickOrder(MouseEvent click)
-            //is used to quickly reload whenever needed. (Happens on Playlists)
         {
             {
                                
