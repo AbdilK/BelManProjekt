@@ -25,7 +25,7 @@ import java.util.logging.Logger;
  *
  * @author Qash
  */
-public class OrderDAO {
+public class OrderDAO implements IOrderDAO {
     
     private DBConnectionProvider db = new DBConnectionProvider();
     
