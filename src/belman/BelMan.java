@@ -12,6 +12,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -28,9 +30,21 @@ public class BelMan extends Application {
         pStage.centerOnScreen();
         //pStage.getIcons().add(new Image("icon.png"));
         Parent root = FXMLLoader.load(getClass().getResource("gui/view/MainWindow.fxml"));
+        //StackPane pane = new StackPane();
+        
         Scene scene = new Scene(root);   
         pStage.setScene(scene);
         pStage.show();
+        //pStage.setMaximized(true);
+        pStage.addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+                @Override
+                public void handle(KeyEvent event) {
+                    if (event.getCode() == KeyCode.F10) {
+                        pStage.setFullScreen(true);
+                    }
+                }
+            });
+            pStage.show();
     }
 
     /**
