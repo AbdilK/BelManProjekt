@@ -19,10 +19,19 @@ public class DepartmentOrderModel {
     private ObservableList<DepartmentOrder> orders = FXCollections.observableArrayList();
     private BLLManager bllManager = new BLLManager();
     
+    /**
+     *
+     * @return
+     */
     public ObservableList<DepartmentOrder> getOrders() {
         return orders;
     }
     
+    /**
+     *
+     * @param departmentName
+     * @throws SQLException
+     */
     public void loadOrders(String departmentName) throws SQLException
     {
         List<DepartmentOrder> loadedOrders = bllManager.getAllDepartmentOrders(departmentName);

@@ -11,14 +11,27 @@ package belman.dal.exception;
  */
 public class DALException extends Exception {
 
+    /**
+     *
+     * @param message
+     */
     public DALException(String message) {
         super(message);
     }
 
+    /**
+     *
+     * @param message
+     * @param cause
+     */
     public DALException(String message, Throwable cause) {
         super(message, cause);
     }
 
+    /**
+     *
+     * @param cause
+     */
     public DALException(Throwable cause) {
         super(cause);
     }

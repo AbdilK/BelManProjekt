@@ -29,6 +29,12 @@ public class OrderDAO implements IOrderDAO {
     
     private DBConnectionProvider db = new DBConnectionProvider();
     
+    /**
+     *
+     * @param departmentName
+     * @return
+     * @throws SQLException
+     */
     public List<DepartmentOrder> getAllDepartmentOrders(String departmentName) throws SQLException {
         List<DepartmentOrder> listOrders = new ArrayList<>();
         try (Connection con = db.getConnection()) {
@@ -65,6 +71,13 @@ public class OrderDAO implements IOrderDAO {
         return listOrders;
     }
     
+    /**
+     *
+     * @param productionID
+     * @param endDate
+     * @return
+     * @throws SQLException
+     */
     public String getDepartmentName(int productionID, Date endDate) throws SQLException {
         String departmentName = "fejl";
         try (Connection con = db.getConnection())
@@ -84,6 +97,15 @@ public class OrderDAO implements IOrderDAO {
         return departmentName;
     }
     
+    /**
+     *
+     * @param orderNumber
+     * @param lastDepartment
+     * @return
+     * @throws SQLServerException
+     * @throws SQLException
+     */
+    @Override
     public boolean getIsReady(int orderNumber, int lastDepartment) throws SQLServerException, SQLException{
         boolean ready = false;
         if(lastDepartment==0) {
@@ -107,6 +129,12 @@ public class OrderDAO implements IOrderDAO {
         return ready;
     }
     
+    /**
+     *
+     * @param productionID
+     * @param departmentName
+     */
+    @Override
     public void markAsDone(int productionID, String departmentName) {
         try (Connection con = db.getConnection()) {
             PreparedStatement stmt;
@@ -124,6 +152,14 @@ public class OrderDAO implements IOrderDAO {
         }
     }
     
+    /**
+     *
+     * @param id
+     * @param startDate
+     * @return
+     * @throws SQLException
+     */
+    @Override
     public boolean getStatus(int id, java.sql.Date startDate) throws SQLException {
         
         boolean status = false;
@@ -144,6 +180,12 @@ public class OrderDAO implements IOrderDAO {
         return status;
     }
     
+    /**
+     *
+     * @param productionID
+     * @param departmentName
+     * @param endDate
+     */
     public void setCurrentDepartment(int productionID, String departmentName, Date endDate) {
         try (Connection con = db.getConnection()) {
             PreparedStatement stmt;

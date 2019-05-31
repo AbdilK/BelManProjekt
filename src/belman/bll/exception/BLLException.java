@@ -11,14 +11,27 @@ package belman.bll.exception;
  */
 public class BLLException extends Exception {
 
+    /**
+     *
+     * @param message
+     */
     public BLLException(String message) {
         super(message);
     }
 
+    /**
+     *
+     * @param message
+     * @param cause
+     */
     public BLLException(String message, Throwable cause) {
         super(message, cause);
     }
 
+    /**
+     *
+     * @param cause
+     */
     public BLLException(Throwable cause) {
         super(cause);
     }
