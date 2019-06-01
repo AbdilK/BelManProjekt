@@ -7,6 +7,7 @@ package belman.bll;
 
 import belman.be.DepartmentOrder;
 import belman.dal.OrderDAO;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.List;
 /**
@@ -23,5 +24,9 @@ public class BLLManager
     
     public void markAsDone(int productionID, String departmentName) {
         dao.markAsDone(productionID, departmentName);
+    }
+    
+    public void setCurrentDepartment(int productionID, Date endDate) {
+        dao.setCurrentDepartment(productionID, endDate);
     }
 }

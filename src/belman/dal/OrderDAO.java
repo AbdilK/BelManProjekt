@@ -42,7 +42,7 @@ public class OrderDAO implements IOrderDAO {
             stmt = con.prepareStatement(
                     "SELECT [ProdOrder].OrderNumber, [DepTask].TaskStatus, [ProdOrder].CurrentDepartment, [DepTask].StartDate, [DepTask].EndDate, [DepTask].LastDepartment, [DepTask].ProductionID " + 
                     "FROM ProdOrder JOIN DepTask " +
-                    "ON [ProdOrder].id = [DepTask].DepartmentID " +
+                    "ON [ProdOrder].id = [DepTask].ProductionID " +
                     "WHERE [DepTask]. DepartmentName = ? " +
                     "AND [DepTask].StartDate <= (convert(date, getdate())) " +
                     "AND [DepTask].TaskStatus = 0"
@@ -78,11 +78,12 @@ public class OrderDAO implements IOrderDAO {
      * @return
      * @throws SQLException
      */
-    public String getDepartmentName(int productionID, Date endDate) throws SQLException {
+    @Override
+    public String getNextDepartmentName(int productionID, Date endDate) throws SQLException {
         String departmentName = "fejl";
         try (Connection con = db.getConnection())
         {
-            PreparedStatement ppst1 = con.prepareStatement("SELECT DepartmentName FROM DepTask WHERE ProductionID = ? AND EndDate = ?");
+            PreparedStatement ppst1 = con.prepareStatement("SELECT DepartmentName FROM DepTask WHERE ProductionID = ? AND StartDate = CONVERT(Date, ? )");
             
             ppst1.setInt(1, productionID);
             ppst1.setDate(2, endDate);
@@ -186,15 +187,14 @@ public class OrderDAO implements IOrderDAO {
      * @param departmentName
      * @param endDate
      */
-    public void setCurrentDepartment(int productionID, String departmentName, Date endDate) {
+    public void setCurrentDepartment(int productionID, Date endDate) {
         try (Connection con = db.getConnection()) {
             PreparedStatement stmt;
             stmt = con.prepareStatement(
-                    "UPDATE [ProdOrder] SET CurrentDepartment = ? WHERE ProductionID = ? AND DepartmentName = ?;"
+                    "UPDATE [ProdOrder] SET CurrentDepartment = ? WHERE id = ?;"
                     );
-            stmt.setString(1, getDepartmentName(productionID, endDate));
+            stmt.setString(1, getNextDepartmentName(productionID, endDate));
             stmt.setInt(2, productionID);
-            stmt.setString(3, departmentName);
             stmt.executeUpdate();
             
         } catch (SQLServerException ex) {

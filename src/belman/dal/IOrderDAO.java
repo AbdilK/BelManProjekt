@@ -19,13 +19,15 @@ public interface IOrderDAO {
     
     public List<DepartmentOrder> getAllDepartmentOrders(String departmentName) throws SQLException;
     
-    public String getDepartmentName(int productionID, Date endDate) throws SQLException;
+    public String getNextDepartmentName(int productionID, Date endDate) throws SQLException;
     
     public boolean getIsReady(int orderNumber, int lastDepartment) throws SQLServerException, SQLException;
     
     public void markAsDone(int productionID, String departmentName);
     
     public boolean getStatus(int id, java.sql.Date startDate) throws SQLException;
+    
+    public void setCurrentDepartment(int productionID, Date endDate);
        
     
 }

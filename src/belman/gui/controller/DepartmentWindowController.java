@@ -19,17 +19,14 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
-import belman.be.DepartmentOrder;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import belman.bll.BLLManager;
 import belman.be.DepartmentOrder;
 import javax.swing.JOptionPane;
-import belman.gui.controller.DepartmentWindowController;
+import java.util.Date;
 
 
 /**
@@ -138,26 +135,18 @@ public class DepartmentWindowController implements Initializable {
         model.loadOrders(departmentName);
         tbvOrders.setItems(model.getOrders());
     }
-    class bg_Thread implements Runnable
+    
+    public void setProgressBar()
     {
-        @Override
-        public void run()
-        {
-            for(int i =0 ; i< 100 ; i++)
-            {
-             progressBar.setProgress(i / 100.0);
-                try 
-                {
-                    Thread.sleep(100);
-                } 
-                    catch (InterruptedException ex) 
-                    {
-                        Logger.getLogger(DepartmentWindowController.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                
-            }
-        }
-    }  
+        Date startDate = new Date(selectedDepartmentOrder.getDepartmentStart().getTime());
+        Date endDate = new Date(selectedDepartmentOrder.getDepartmentEnd().getTime());
+        Date now = new Date();
+        long totalTime = Math.abs(endDate.getTime() - startDate.getTime());
+        long timeRemaining = Math.abs(endDate.getTime() - now.getTime());
+        final double percentage = (timeRemaining / ((double) totalTime)) * 100;
+        progressBar.setProgress(percentage / 100);
+            
+    }
     
     @FXML
     private void orderDone(ActionEvent event) 
@@ -168,6 +157,7 @@ public class DepartmentWindowController implements Initializable {
         if (svar == JOptionPane.YES_OPTION)
         {
         bll.markAsDone(selectedDepartmentOrder.getProductionId(), departmentName);
+        bll.setCurrentDepartment(selectedDepartmentOrder.getProductionId(), selectedDepartmentOrder.getDepartmentEnd());
         System.out.println("Ordrenummeret: " + selectedDepartmentOrder.getOrderNumber() + " er markeret som færdig og er sendt videre til næste afdeling");
         }
         
@@ -206,6 +196,8 @@ public class DepartmentWindowController implements Initializable {
                 java.util.Date utilDate3 = new java.util.Date(selectedDepartmentOrder.getDepartmentEnd().getTime());
                 lblEndDate.setText(String.valueOf(utilDate3));
                 
+                
+                setProgressBar();
                 
             }
          }
