@@ -179,20 +179,20 @@ public class DepartmentWindowController implements Initializable {
         
         int svar = JOptionPane.showConfirmDialog(null, "Er du sikker på, at du vil udføre denne handling?", "Sikkerhedsbox", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         
-        if (svar == JOptionPane.YES_OPTION)
-        {
-        bll.markAsDone(selectedDepartmentOrder.getProductionId(), departmentName);
-        bll.setCurrentDepartment(selectedDepartmentOrder.getProductionId(), selectedDepartmentOrder.getDepartmentEnd());
-        System.out.println("Ordrenummeret: " + selectedDepartmentOrder.getOrderNumber() + " er markeret som færdig og er sendt videre til næste afdeling");
-        }
-        
-        else if (svar == JOptionPane.NO_OPTION)
-        {
-            System.out.println("Handlingen er blevet annulleret"); 
-        }
-        else if (svar == JOptionPane.CLOSED_OPTION)
-        {
-            System.out.println("Handlingen er blevet annulleret"); 
+        switch (svar) {
+            case JOptionPane.YES_OPTION:
+                bll.markAsDone(selectedDepartmentOrder.getProductionId(), departmentName);
+                bll.setCurrentDepartment(selectedDepartmentOrder.getProductionId(), selectedDepartmentOrder.getDepartmentEnd());
+                System.out.println("Ordrenummeret: " + selectedDepartmentOrder.getOrderNumber() + " er markeret som færdig og er sendt videre til næste afdeling");
+                break;
+            case JOptionPane.NO_OPTION:
+                System.out.println("Handlingen er blevet annulleret");
+                break;
+            case JOptionPane.CLOSED_OPTION:
+                System.out.println("Handlingen er blevet lukket");
+                break;
+            default:
+                break; 
         }
     }
     
