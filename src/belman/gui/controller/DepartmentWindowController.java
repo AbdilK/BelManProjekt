@@ -141,16 +141,20 @@ public class DepartmentWindowController implements Initializable {
         departmentName=name;
     }
     
+    public Timestamp getTimestamp() {
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        return timestamp;
+    }
+    
     public void getOrders() throws SQLException {
         
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         ScheduledExecutorService exe = Executors.newScheduledThreadPool(1);
         Runnable task = () ->
         {
             try
             {
                 model.loadOrders(departmentName);
-                System.out.println(timestamp + " Ordrene er opdateret");
+                System.out.println(getTimestamp() + " Ordrene er opdateret");
             } catch (SQLException ex)
             {
                 Logger.getLogger(BelMan.class.getName()).log(Level.SEVERE, null, ex);
@@ -167,7 +171,7 @@ public class DepartmentWindowController implements Initializable {
         Date endDate = new Date(selectedDepartmentOrder.getDepartmentEnd().getTime());
         Date now = new Date();
         long totalTime = Math.abs(endDate.getTime() - startDate.getTime());
-        long timeRemaining = Math.abs(endDate.getTime() - now.getTime());
+        long timeRemaining = Math.abs(now.getTime() - startDate.getTime());
         final double percentage = (timeRemaining / ((double) totalTime)) * 100;
         progressBar.setProgress(percentage / 100);
             
