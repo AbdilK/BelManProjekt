@@ -27,7 +27,10 @@ import javafx.scene.input.MouseEvent;
 import belman.bll.BLLManager;
 import belman.be.DepartmentOrder;
 import java.sql.Timestamp;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import javax.swing.JOptionPane;
 import java.util.Date;
 import java.util.concurrent.Executors;
@@ -200,7 +203,7 @@ public class DepartmentWindowController implements Initializable {
         }
     }
     
-        @FXML public void clickOrder(MouseEvent click)
+        @FXML public void clickOrder(MouseEvent click) throws ParseException
         {
             {
                                
@@ -219,11 +222,11 @@ public class DepartmentWindowController implements Initializable {
                 }
                 lblCurrentDep.setText(selectedDepartmentOrder.getCurrentDepartment());
                 java.util.Date utilDate1 = new java.util.Date(selectedDepartmentOrder.getDepartmentStart().getTime());
-                lblStartDate.setText(String.valueOf(utilDate1));
+                LocalDate localDate1 = utilDate1.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                lblStartDate.setText(String.valueOf(localDate1));
                 java.util.Date utilDate2 = new java.util.Date(selectedDepartmentOrder.getDepartmentEnd().getTime());
-                lblEndDate.setText(String.valueOf(utilDate2));
-                java.util.Date utilDate3 = new java.util.Date(selectedDepartmentOrder.getDepartmentEnd().getTime());
-                lblEndDate.setText(String.valueOf(utilDate3));
+                LocalDate localDate2 = utilDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                lblEndDate.setText(String.valueOf(localDate2));
                 
                 
                 setProgressBar();
