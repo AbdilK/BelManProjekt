@@ -52,7 +52,7 @@ public class BelMan extends Application {
         pStage.addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
                 @Override
                 public void handle(KeyEvent event) {
-                    if (event.getCode() == KeyCode.F10) {
+                    if (event.getCode() == KeyCode.F11) {
                         pStage.setFullScreen(true);
                     }
                 }
