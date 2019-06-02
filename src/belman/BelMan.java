@@ -33,22 +33,22 @@ import java.lang.String;
  * @author Qash
  */
 public class BelMan extends Application {
-    
-    private DepartmentOrderModel DOM = new DepartmentOrderModel();
+
     
    @Override
     public void start(Stage pStage) throws Exception
     {
         pStage.setTitle("BelMan login");
         pStage.centerOnScreen();
-        //pStage.getIcons().add(new Image("icon.png"));
         Parent root = FXMLLoader.load(getClass().getResource("gui/view/MainWindow.fxml"));
-        //StackPane pane = new StackPane();
+        
         
         Scene scene = new Scene(root);   
         pStage.setScene(scene);
         pStage.show();
+        //Applikationen starter i maksimeret tilstand
         pStage.setMaximized(true);
+        //F11 knappen bruges til at lave fullscreen, således det ser bedre ud på eksempelvis en touch skærm
         pStage.addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
                 @Override
                 public void handle(KeyEvent event) {
