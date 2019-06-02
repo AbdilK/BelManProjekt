@@ -5,6 +5,7 @@
  */
 package belman.gui.controller;
 
+import belman.BelMan;
 import belman.gui.model.DepartmentOrderModel;
 import java.io.IOException;
 import java.net.URL;
@@ -25,8 +26,16 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import belman.bll.BLLManager;
 import belman.be.DepartmentOrder;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import java.util.Date;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 
 /**
@@ -36,6 +45,7 @@ import java.util.Date;
  */
 public class DepartmentWindowController implements Initializable {
     
+    private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss");
     private DepartmentOrder selectedDepartmentOrder;
     belman.be.DepartmentOrder DepartmentOrder = new  belman.be.DepartmentOrder();
     @FXML
@@ -132,7 +142,22 @@ public class DepartmentWindowController implements Initializable {
     }
     
     public void getOrders() throws SQLException {
-        model.loadOrders(departmentName);
+        
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        ScheduledExecutorService exe = Executors.newScheduledThreadPool(1);
+        Runnable task = () ->
+        {
+            try
+            {
+                model.loadOrders(departmentName);
+                System.out.println(timestamp + " Ordrene er opdateret");
+            } catch (SQLException ex)
+            {
+                Logger.getLogger(BelMan.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        };
+
+        exe.scheduleWithFixedDelay(task, 0, 5, TimeUnit.SECONDS);
         tbvOrders.setItems(model.getOrders());
     }
     

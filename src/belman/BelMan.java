@@ -5,6 +5,16 @@
  */
 package belman;
 
+
+import belman.gui.model.DepartmentOrderModel;
+import java.io.File;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -16,12 +26,15 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import java.lang.String;
 
 /**
  *
  * @author Qash
  */
 public class BelMan extends Application {
+    
+    private DepartmentOrderModel DOM = new DepartmentOrderModel();
     
    @Override
     public void start(Stage pStage) throws Exception
@@ -45,6 +58,8 @@ public class BelMan extends Application {
                 }
             });
             pStage.show();
+            
+    
     }
 
     /**
@@ -52,6 +67,7 @@ public class BelMan extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+        
     }
     
 }
