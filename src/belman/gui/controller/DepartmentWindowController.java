@@ -52,10 +52,6 @@ public class DepartmentWindowController implements Initializable {
     private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss");
     private DepartmentOrder selectedDepartmentOrder;
     belman.be.DepartmentOrder DepartmentOrder = new  belman.be.DepartmentOrder();
-    @FXML
-    private Button PrevBtn;
-    @FXML
-    private Button NextBtn;
     private AnchorPane bertelPane;
     @FXML
     private Label lblAfdeling;
@@ -124,18 +120,7 @@ public class DepartmentWindowController implements Initializable {
         progressBar.setProgress(0.0);
     }    
 
-    /**
-     * Går til MainVindow
-     * (Virker ikke)
-     * @param event
-     * @throws IOException 
-     */
-    @FXML
-    private void PreviousPage(ActionEvent event) throws IOException 
-    {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/belman/gui/view/MainWindow.fxml"));
-        bertelPane.getChildren().setAll(pane);
-    }
+   
     
     /**
      * For et lable til at fremvise navnet på afdelingen
@@ -267,7 +252,4 @@ public class DepartmentWindowController implements Initializable {
             }
          }
 
-    @FXML
-    private void NextPage(ActionEvent event) {
-    }
 }
