@@ -56,6 +56,12 @@ public class MainWindowController implements Initializable {
         // TODO
     }    
 
+    /**
+     * Går til DepartmentWindow for Halvfab
+     * @param event
+     * @throws IOException
+     * @throws SQLException 
+     */
    @FXML
     private void openHalfab(ActionEvent event) throws IOException, SQLException 
     {
@@ -69,6 +75,12 @@ public class MainWindowController implements Initializable {
         // den vil ikke dur, dog vil de andre
     }
 
+    /**
+     * Går til DepartmentWindow for Montage 1
+     * @param event
+     * @throws IOException
+     * @throws SQLException 
+     */
     @FXML
     private void openMontage1(ActionEvent event) throws IOException, SQLException 
     {
@@ -81,6 +93,12 @@ public class MainWindowController implements Initializable {
         MainWindowPane.getChildren().setAll(root);
     }
 
+    /**
+     * Går til DepartmentWindow for Bertel
+     * @param event
+     * @throws IOException
+     * @throws SQLException 
+     */
     @FXML
     private void openBertel(ActionEvent event) throws IOException, SQLException 
     {
@@ -93,6 +111,12 @@ public class MainWindowController implements Initializable {
         MainWindowPane.getChildren().setAll(root);
     }
 
+    /**
+     * Går til DepartmentWindow for Bælg
+     * @param event
+     * @throws IOException
+     * @throws SQLException 
+     */
     @FXML
     private void openBælg(ActionEvent event) throws IOException, SQLException 
     {
@@ -105,6 +129,12 @@ public class MainWindowController implements Initializable {
         MainWindowPane.getChildren().setAll(root);
     }
 
+    /**
+     * Går til DepartmentWindow for Montage 2
+     * @param event
+     * @throws IOException
+     * @throws SQLException 
+     */
     @FXML
     private void openMontage2(ActionEvent event)  throws IOException, SQLException 
     {
@@ -117,6 +147,12 @@ public class MainWindowController implements Initializable {
         MainWindowPane.getChildren().setAll(root);
     }
 
+    /**
+     * Går til DepartmentWindow for Maler
+     * @param event
+     * @throws IOException
+     * @throws SQLException 
+     */
     @FXML
     private void openMaler(ActionEvent event) throws IOException, SQLException 
     {
@@ -130,6 +166,12 @@ public class MainWindowController implements Initializable {
         
     }
 
+    /**
+     * Går til DepartmentWindow for Forsendelse
+     * @param event
+     * @throws IOException
+     * @throws SQLException 
+     */
     @FXML
     private void openForsendelse(ActionEvent event) throws IOException, SQLException 
     {

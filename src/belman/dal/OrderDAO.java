@@ -5,13 +5,10 @@
  */
 package belman.dal;
 
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import belman.bll.DBConnectionProvider;
@@ -30,11 +27,12 @@ public class OrderDAO implements IOrderDAO {
     private DBConnectionProvider db = new DBConnectionProvider();
     
     /**
-     *
+     * Henter en liste af aktuelle ordre for en afdeling
      * @param departmentName
      * @return
      * @throws SQLException
      */
+    @Override
     public List<DepartmentOrder> getAllDepartmentOrders(String departmentName) throws SQLException {
         List<DepartmentOrder> listOrders = new ArrayList<>();
         try (Connection con = db.getConnection()) {
@@ -72,7 +70,7 @@ public class OrderDAO implements IOrderDAO {
     }
     
     /**
-     *
+     * Retunere navnet på afdelingen efter den nuværende
      * @param productionID
      * @param endDate
      * @return
@@ -99,39 +97,7 @@ public class OrderDAO implements IOrderDAO {
     }
     
     /**
-     *
-     * @param orderNumber
-     * @param lastDepartment
-     * @return
-     * @throws SQLServerException
-     * @throws SQLException
-     */
-    @Override
-    public boolean getIsReady(int orderNumber, int lastDepartment) throws SQLServerException, SQLException{
-        boolean ready = false;
-        if(lastDepartment==0) {
-            ready = true;
-        }
-        else {
-        try (Connection con = db.getConnection()) {
-            PreparedStatement stmt;
-            stmt = con.prepareStatement(
-                    "SELECT [Relations].Status FROM [Relations] WHERE OrderNumber = ? AND DepartmentId = ?;"
-                    );
-            stmt.setInt(1, orderNumber);
-            stmt.setInt(2, lastDepartment);
-            ResultSet rs = stmt.executeQuery();
-            while (rs.next()) {
-                ready = rs.getBoolean("Status");
-            }
-        }
-        }
-        
-        return ready;
-    }
-    
-    /**
-     *
+     * Opdatere ordren til at være færdig i nuværende afdeling
      * @param productionID
      * @param departmentName
      */
@@ -154,7 +120,7 @@ public class OrderDAO implements IOrderDAO {
     }
     
     /**
-     *
+     * Checker om en ordre er klar til at blive arbejdet på
      * @param id
      * @param startDate
      * @return
@@ -182,11 +148,11 @@ public class OrderDAO implements IOrderDAO {
     }
     
     /**
-     *
+     * Opdatere CurrentDepartmen for en ordre
      * @param productionID
-     * @param departmentName
      * @param endDate
      */
+    @Override
     public void setCurrentDepartment(int productionID, Date endDate) {
         try (Connection con = db.getConnection()) {
             PreparedStatement stmt;

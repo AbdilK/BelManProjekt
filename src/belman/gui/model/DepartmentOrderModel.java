@@ -20,7 +20,7 @@ public class DepartmentOrderModel {
     private BLLManager bllManager = new BLLManager();
     
     /**
-     *
+     * Retunere en liste af ordre
      * @return
      */
     public ObservableList<DepartmentOrder> getOrders() {
@@ -28,7 +28,8 @@ public class DepartmentOrderModel {
     }
     
     /**
-     *
+     * Henter alle aktuelle ordre for en afdeling
+     * Sætter de hentede ordre på en liste
      * @param departmentName
      * @throws SQLException
      */

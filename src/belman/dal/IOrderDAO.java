@@ -6,7 +6,6 @@
 package belman.dal;
 
 import belman.be.DepartmentOrder;
-import com.microsoft.sqlserver.jdbc.SQLServerException;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.util.List;
@@ -20,8 +19,6 @@ public interface IOrderDAO {
     public List<DepartmentOrder> getAllDepartmentOrders(String departmentName) throws SQLException;
     
     public String getNextDepartmentName(int productionID, Date endDate) throws SQLException;
-    
-    public boolean getIsReady(int orderNumber, int lastDepartment) throws SQLServerException, SQLException;
     
     public void markAsDone(int productionID, String departmentName);
     

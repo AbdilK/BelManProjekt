@@ -22,7 +22,7 @@ public class DepartmentOrder {
     private int productionId;
     
     /**
-     *
+     * Retunere orderNumber
      * @return
      */
     public String getOrderNumber() {
@@ -30,7 +30,7 @@ public class DepartmentOrder {
     }
     
     /**
-     *
+     * Sætter orderNumber
      * @param orderNumber
      */
     public void setOrderNumber(String orderNumber) {
@@ -38,7 +38,7 @@ public class DepartmentOrder {
     }
     
     /**
-     *
+     * Retunere CurrentDepartment
      * @return
      */
     public String getCurrentDepartment() {
@@ -46,7 +46,7 @@ public class DepartmentOrder {
     }
     
     /**
-     *
+     * Sætter currentDepartment
      * @param currentDepartment
      */
     public void setCurrentDepartment(String currentDepartment) {
@@ -54,7 +54,7 @@ public class DepartmentOrder {
     }
     
     /**
-     *
+     * Retunere departmentStart
      * @return
      */
     public Date getDepartmentStart() {
@@ -62,7 +62,7 @@ public class DepartmentOrder {
     }
     
     /**
-     *
+     * Sætter departmentStart
      * @param departmentStart
      */
     public void setDepartmentStart(Date departmentStart) {
@@ -70,7 +70,7 @@ public class DepartmentOrder {
     }
     
     /**
-     *
+     * Retunere departmentEnd
      * @return
      */
     public Date getDepartmentEnd() {
@@ -78,7 +78,7 @@ public class DepartmentOrder {
     }
     
     /**
-     *
+     * Sætter departmentEnd
      * @param departmentEnd
      */
     public void setDepartmentEnd(Date departmentEnd) {
@@ -86,7 +86,7 @@ public class DepartmentOrder {
     }
     
     /**
-     *
+     * Retunere lastDepartment
      * @return
      */
     public String getLastDepartment() {
@@ -94,7 +94,7 @@ public class DepartmentOrder {
     }
     
     /**
-     *
+     * Sætter lastDepartment
      * @param lastDepartment
      */
     public void setLastDepartment(String lastDepartment) {
@@ -102,7 +102,7 @@ public class DepartmentOrder {
     }
     
     /**
-     *
+     * Retunere status
      * @return
      */
     public boolean isStatus() {
@@ -110,7 +110,7 @@ public class DepartmentOrder {
     }
     
     /**
-     *
+     * Sætter status
      * @param status
      */
     public void setStatus(boolean status) {
@@ -118,7 +118,7 @@ public class DepartmentOrder {
     }
     
     /**
-     *
+     * Retunere productionsId
      * @return
      */
     public int getProductionId() {
@@ -126,7 +126,7 @@ public class DepartmentOrder {
     }
     
     /**
-     *
+     * Sætter productionsId
      * @param productionId
      */
     public void setProductionId(int productionId) {

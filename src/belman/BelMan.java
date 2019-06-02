@@ -6,27 +6,14 @@
 package belman;
 
 
-import belman.gui.model.DepartmentOrderModel;
-import java.io.File;
-import java.io.IOException;
-import java.sql.SQLException;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import java.lang.String;
 
 /**
  *
@@ -34,8 +21,12 @@ import java.lang.String;
  */
 public class BelMan extends Application {
 
-    
-   @Override
+    /**
+     * Starter programmet
+     * @param pStage
+     * @throws Exception 
+     */
+    @Override
     public void start(Stage pStage) throws Exception
     {
         pStage.setTitle("BelMan login");

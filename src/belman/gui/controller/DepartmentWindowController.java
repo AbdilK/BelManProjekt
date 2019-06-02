@@ -38,6 +38,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.layout.BorderPane;
 
 
 
@@ -55,7 +56,6 @@ public class DepartmentWindowController implements Initializable {
     private Button PrevBtn;
     @FXML
     private Button NextBtn;
-    @FXML
     private AnchorPane bertelPane;
     @FXML
     private Label lblAfdeling;
@@ -85,8 +85,6 @@ public class DepartmentWindowController implements Initializable {
     @FXML
     private Label endDateLabel;
     @FXML
-    private Label shippingDateLabel;
-    @FXML
     private Label progressLabel;
     @FXML
     private Label lblOrderId;
@@ -99,12 +97,13 @@ public class DepartmentWindowController implements Initializable {
     @FXML
     private Label lblEndDate;
     @FXML
-    private Label lblShippingDate;
-    @FXML
     private Button markAsDoneButton;
+    @FXML
+    private BorderPane departmentPane;
 
     /**
      * Initializes the controller class.
+     * Initialisere tableviewet
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -125,30 +124,50 @@ public class DepartmentWindowController implements Initializable {
         progressBar.setProgress(0.0);
     }    
 
+    /**
+     * Går til MainVindow
+     * (Virker ikke)
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void PreviousPage(ActionEvent event) throws IOException 
     {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("/belman/gui/view/MainWindow.fxml"));
         bertelPane.getChildren().setAll(pane);
     }
-
-    @FXML
-    private void NextPage(ActionEvent event) {
-    }
     
+    /**
+     * For et lable til at fremvise navnet på afdelingen
+     * @param department 
+     */
     public void setLblAfdeling(String department){
         lblAfdeling.setText("Afdeling: " + department);
     }
     
+    /**
+     * Sætter departmentens naven
+     * @param name 
+     */
     public void setDepartmentId(String name){
         departmentName=name;
     }
     
+    /**
+     * Laver et timstamp for det nuværende tidspunkt
+     * @return 
+     */
     public Timestamp getTimestamp() {
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         return timestamp;
     }
     
+    /**
+     * Henter alle aktuelle ordre for afdelingen fra databasen
+     * Starter en tråd der gentages hver femte sekund
+     * så ordrene altid er op to date
+     * @throws SQLException 
+     */
     public void getOrders() throws SQLException {
         
         ScheduledExecutorService exe = Executors.newScheduledThreadPool(1);
@@ -168,6 +187,9 @@ public class DepartmentWindowController implements Initializable {
         tbvOrders.setItems(model.getOrders());
     }
     
+    /**
+     * Sætter progressbaren til efter hvor langt opgaven er dato vis
+     */
     public void setProgressBar()
     {
         Date startDate = new Date(selectedDepartmentOrder.getDepartmentStart().getTime());
@@ -180,6 +202,10 @@ public class DepartmentWindowController implements Initializable {
             
     }
     
+    /**
+     * Markere odren som færdig og den sendes vidre til den næste afdeling
+     * @param event 
+     */
     @FXML
     private void orderDone(ActionEvent event) 
     {
@@ -203,6 +229,13 @@ public class DepartmentWindowController implements Initializable {
         }
     }
     
+    /**
+     * Når man clicker på en ordre bilver den gemt som en variable
+     * Variablen sætter labels til info fra ordren
+     * Progressbaren hvis færdig procent på opgaven
+     * @param click
+     * @throws ParseException 
+     */
         @FXML public void clickOrder(MouseEvent click) throws ParseException
         {
             {
@@ -233,4 +266,8 @@ public class DepartmentWindowController implements Initializable {
                 
             }
          }
+
+    @FXML
+    private void NextPage(ActionEvent event) {
+    }
 }

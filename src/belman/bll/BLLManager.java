@@ -18,14 +18,30 @@ public class BLLManager
 {
     private OrderDAO dao = new OrderDAO();
     
+    /**
+     * Sender en liste fra databasen vidre til gui controlleren
+     * @param departmentName
+     * @return
+     * @throws SQLException 
+     */
     public List<DepartmentOrder> getAllDepartmentOrders(String departmentName) throws SQLException {
         return dao.getAllDepartmentOrders(departmentName);
     }
     
+    /**
+     * Sender en opdate fra gui controlleren vidre til daoen
+     * @param productionID
+     * @param departmentName 
+     */
     public void markAsDone(int productionID, String departmentName) {
         dao.markAsDone(productionID, departmentName);
     }
     
+    /**
+     * Sender en opdate fra gui controlleren vidre til daoen
+     * @param productionID
+     * @param endDate 
+     */
     public void setCurrentDepartment(int productionID, Date endDate) {
         dao.setCurrentDepartment(productionID, endDate);
     }
