@@ -48,7 +48,7 @@ public class BelMan extends Application {
         Scene scene = new Scene(root);   
         pStage.setScene(scene);
         pStage.show();
-        //pStage.setMaximized(true);
+        pStage.setMaximized(true);
         pStage.addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
                 @Override
                 public void handle(KeyEvent event) {
