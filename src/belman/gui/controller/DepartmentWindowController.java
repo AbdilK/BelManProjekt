@@ -181,8 +181,8 @@ public class DepartmentWindowController implements Initializable {
         Date endDate = new Date(selectedDepartmentOrder.getDepartmentEnd().getTime());
         Date now = new Date();
         long totalTime = Math.abs(endDate.getTime() - startDate.getTime());
-        long timeRemaining = Math.abs(now.getTime() - startDate.getTime());
-        final double percentage = (timeRemaining / ((double) totalTime)) * 100;
+        long timePassed = Math.abs(now.getTime() - startDate.getTime());
+        final double percentage = (timePassed / ((double) totalTime)) * 100;
         progressBar.setProgress(percentage / 100);
             
     }
